@@ -18,11 +18,11 @@
 }
 
 body {
-  /* margin: 0; */
-  /* display: flex;
-  place-items: center;
+  margin: 0;
   min-width: 320px;
-  min-height: 100vh; */
+  min-height: 100vh;
+  max-width: 1440px;
+  box-sizing: border-box;
 }
 
 
@@ -42,6 +42,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100;
 }
 
 .logo img {
@@ -54,12 +55,11 @@ body {
 }
 
 
-.nav-bar ul {
+.navigation ul {
   display: flex;
-  justify-content: space-between;
   margin: 2rem;
 }
 
-.nav-bar ul li {
-  flex-grow: 1;
+.navigation ul li {
+  margin: 0 1.5rem;
 }
