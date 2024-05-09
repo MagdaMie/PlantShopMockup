@@ -25,28 +25,40 @@ body {
   box-sizing: border-box;
 }
 
+/* general */
 
-/* button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-} */
+h3 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.25rem;
+  padding: 0 1.5rem;
+}
+
+.btn {
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  border: 1.5px solid white;
+}
+
+.margin {
+  margin: 1rem;
+}
+
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100;
+  height: 100px;
 }
 
 .logo img {
-  height: 100px;
+  height: 80px;
   width: auto;
 }
 
@@ -62,4 +74,23 @@ body {
 
 .navigation ul li {
   margin: 0 1.5rem;
+}
+
+.baner {
+  width: 100%;
+  height: 450px;
+  background-image: url(/Baner1.jpg);
+  background-size: cover ;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.baner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
