@@ -48,7 +48,7 @@ p {
   margin: 1rem;
 }
 
-
+/* Header */
 .header {
   display: flex;
   align-items: center;
@@ -76,6 +76,8 @@ p {
   margin: 0 1.5rem;
 }
 
+/* Baner */
+
 .baner {
   width: 100%;
   height: 450px;
@@ -93,4 +95,31 @@ p {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+/* Hero */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem 0;
+}
+
+.hero .about-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .img-wrpa
+{
+ padding: 3rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.hero .img-wrap img {
+  height: 500px;
 }
