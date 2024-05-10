@@ -15,6 +15,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --very-dark-gren: #273526;
+  --dark-green: #45624E;
+  --green:#6d8777;
+  --light-green: #C0cfb2;
+  --very-light-green: #e4e6d9;
+
 }
 
 body {
@@ -33,9 +40,13 @@ h3 {
   font-weight: bold;
 }
 
+h2 {
+  font-size: 1.25rem;;
+}
+
 p {
-  font-size: 1.25rem;
-  padding: 0 1.5rem;
+  font-size: 1rem;
+  /* padding: 1rem 1.5rem; */
 }
 
 .btn {
@@ -112,7 +123,7 @@ p {
   align-items: center;
 }
 
-.hero .img-wrpa
+.hero .img-wrap
 {
  padding: 3rem;
  display: flex;
@@ -122,4 +133,31 @@ p {
 
 .hero .img-wrap img {
   height: 500px;
+}
+
+/* Benefits */
+
+.benefits {
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  /* gap: 50px; */
+  background-color: var(--very-dark-gren);
+  width: 100%;
+}
+
+.benefit-card {
+  display: flex;
+  justify-content: center;
+  align-items: ceenter;
+  margin: 20px;
+}
+
+.benefit-card img {
+  height: 80px;
+  margin: 20px;
+}
+
+.benefit-wrap {
+  margin: 20px;
 }
