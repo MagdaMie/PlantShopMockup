@@ -1,7 +1,5 @@
-import Header from "./components/Header"
-import Baner from "./components/Baner"
-import Hero from "./components/Hero"
-import Benefits from "./components/Benefits"
+import AboutMe from "./components/AboutMe"
+import Products from "./Products"
 
 
 
@@ -9,11 +7,8 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Baner /> 
-      <Hero />
-      <Benefits />
-      
+      <AboutMe />
+      <Products />
     </>
   )
 }

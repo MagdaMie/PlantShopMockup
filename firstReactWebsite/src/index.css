@@ -161,3 +161,35 @@ p {
 .benefit-wrap {
   margin: 20px;
 }
+
+/* Shop */
+
+/* .products {
+  display: flex;
+} */
+
+.product-card {
+  display: inline-block;
+  margin: 20px;
+}
+
+.product-card .img-wrap{
+  width: 250px;
+  height: 350px;
+  position: relative;
+
+}
+.product-card .img-wrap img {
+  width: 250px;
+  height: 350px;
+  position: absolute;
+  top: 10%;
+  left: -15%;
+ 
+}
+
+.product-details {
+  border: 2px solid #45624E;
+  padding: 20px;
+  border-radius: 15px;
+}
