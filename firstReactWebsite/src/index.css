@@ -172,10 +172,6 @@ p {
 
 /* Shop */
 
-/* .products {
-  display: flex;
-} */
-
 .product-card {
   display: inline-block;
   margin: 20px;
@@ -221,4 +217,58 @@ p {
 
 .product-name {
   font-weight: bold;
+}
+
+/* FAQ */
+.faq-accordion {
+  margin-top: -100px;
+}
+
+.faq {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.faq .question {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid white;
+  padding: 15px;
+}
+
+.faq .anwser {
+  background-color: #C0cfb2;
+  color: #242424;
+  padding: 25px;
+  margin-top: 10px;
+}
+
+.faq .question p, 
+.faq .anwser p {
+  font-size: 1.25rem;
+}
+
+.question-btn {
+  font-weight: bold;
+  margin: 0 15px;
+}
+
+/* .faq-baner{
+  width: 100%;
+} */
+
+.baner-bg {
+  width: 100%;
+  height: 450px;
+  background-image: url(/FAQbaner.png);
+  background-size: cover ;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.baner-bg h3 {
+  margin-top: 120px;
 }

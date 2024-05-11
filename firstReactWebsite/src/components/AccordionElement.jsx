@@ -2,17 +2,16 @@
 const AccordionElement = ({title, onClick, style, isOpen, text}) => {
 
     return(
-        <div className="wrap">
-            <div className="wrap-main">
-                <div className="main">
+        <div className="faq">
+            <div className="question">
+                <div className="question-wrap">
                     <p>{title}</p>
                 </div>
-                <button onClick={onClick} style={style}>{"<"}</button>
+                <button className="question-btn" onClick={onClick} style={style}>{">"}</button>
             </div>
-                 {isOpen &&  <div className="more-text">
-                    <p>{text}</p>
-                    <p>just to check the git issue</p>
-                 </div>}
+            {isOpen &&  <div className="anwser">
+                <p>{text}</p>
+            </div>}
         </div>
     )
     

@@ -1,9 +1,13 @@
 import FaqAccordion from "./FaqAccordion"
+import FaqBaner from "./FaqBaner"
 
 const FaqPage = () => {
 
     return(
-        <FaqAccordion />
+        <>
+          <FaqBaner />
+          <FaqAccordion />
+        </>
     )
 }
 
