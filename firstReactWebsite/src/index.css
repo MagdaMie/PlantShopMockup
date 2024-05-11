@@ -55,6 +55,14 @@ p {
   border: 1.5px solid white;
 }
 
+.btn-better {
+  background-color: #45624E;
+  padding: 8px 18px;
+  border-radius: 20px;
+}
+.btn-better:hover{
+  background-color: #6d8777;
+}
 .margin {
   margin: 1rem;
 }
@@ -190,6 +198,27 @@ p {
 
 .product-details {
   border: 2px solid #45624E;
-  padding: 20px;
+  padding: 50px 20px 20px;
   border-radius: 15px;
+}
+
+.product-details .wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.product-details .button-wrap {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.product-name {
+  font-weight: bold;
 }

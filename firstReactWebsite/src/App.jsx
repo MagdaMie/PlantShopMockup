@@ -1,6 +1,6 @@
 import AboutMe from "./components/AboutMe"
-import Products from "./Products"
-
+import Products from "./components/Products"
+import FaqPage from "./components/FaqPage"
 
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
     <>
       <AboutMe />
       <Products />
+      <FaqPage />
     </>
   )
 }

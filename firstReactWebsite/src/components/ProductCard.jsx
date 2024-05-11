@@ -1,7 +1,7 @@
-
+import ButtonBetter from "./ButtonBetter"
 
 const ProductCard = ({ name, price, img}) => {
-
+    const buttonContent = 'Add to the cart'
     return(
         <div className="product-card">
             <div className="img-wrap">
@@ -10,9 +10,13 @@ const ProductCard = ({ name, price, img}) => {
             <div className="product-details">
                 <div className="wrap">
                     <p className="product-name">{name}</p>
-                    <p className="product-price">{price}</p>
+                    <p className="product-price">${price}</p>
                 </div>
-                <button>Add to the cart</button>
+                <div className="button-wrap">
+                <ButtonBetter 
+                content={buttonContent}/> 
+                </div>
+                
             </div>
         </div>
     )
