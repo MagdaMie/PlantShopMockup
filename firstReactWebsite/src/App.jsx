@@ -1,8 +1,9 @@
 import Header from "./components/Header"
 import ProductPage from "./components/ProductPage"
-import AboutMe from "./components/AboutMe"
+import Home from "./components/Home"
 import Products from "./components/Products"
 import FaqPage from "./components/FaqPage"
+import ContactPage from "./components/ContactPage"
 
 
 function App() {
@@ -10,10 +11,11 @@ function App() {
   return (
     <>
       <Header />
-      <AboutMe />
+      <Home />
       <Products />
       <ProductPage />
       <FaqPage />
+      <ContactPage />
     </>
   )
 }
