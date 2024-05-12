@@ -37,6 +37,8 @@ const ProductPage = () => {
                 <ButtonBetter 
                 content={'Add to the cart'}/>
                 </div>
+                <div>
+                </div>
             </div>
         </div>
 
