@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Button from "./Button"
 
 const Baner = () => {
@@ -7,7 +8,7 @@ const Baner = () => {
             <div className="baner-container">
                 <h3 className="margin">Lorem ipsum dolor sit</h3>
                 <p className="margin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quasi reprehenderit labore natus molestiae culpa.</p>
-                <a className="margin" href=""><Button content={button}/></a>
+                <Link to={'/shop'}><Button content={button}/></Link>
             </div>
         </div>
     )
