@@ -1,21 +1,30 @@
+import { useEffect, useState } from "react";
+
+const PriceCounter = ({cartProducts}) => {
+    const [totalPrice, setTotalPrice] = useState()
+    const shippingCost = 75
 
 
-const PriceCounter = () => {
+   
+    useEffect(() => {
+        setTotalPrice(cartProducts.reduce((total, product) => total + product.price, 0))
+    },[cartProducts])
+
 
 
     return(
         <div className="price-counter">
             <div className="subtotal">
                 <p>Subtotal</p>
-                <p>$599</p>
+                <p>${totalPrice}</p>
             </div>
             <div className="shipping">
                 <p>Shipping</p>
-                <p>Free</p>
+                {totalPrice>0 && <p>${shippingCost}</p>}
             </div>
             <div className="total">
                 <p>Total</p>
-                <p>$599</p>
+                {totalPrice>0 && <p>${totalPrice + shippingCost}</p>}
             </div>
         </div>
 

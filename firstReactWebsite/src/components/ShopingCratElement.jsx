@@ -1,23 +1,23 @@
 
 
-const ShoppingCartElement = () => {
+const ShoppingCartElement = ({cartProduct, removePlant}) => {
 
     return (
         <div className="shopping-cart-element">
             <div className="product">
-                <img src="2.png" alt="" />
-                <p>plant name</p>
+                <img src={cartProduct.img} alt="" />
+                <p>{cartProduct.name}</p>
             </div>
-            <div className="quantity">
+            {/* <div className="quantity">
                 <p>-</p>
                 <p>3</p>
                 <p>+</p>
-            </div>
+            </div> */}
             <div className="price">
-                <p>$55</p>
+                <p>${cartProduct.price}</p>
             </div>
             <div className="remove">
-                <p>x</p>
+                <p onClick={() => removePlant(cartProduct.id)}>x</p>
             </div>
         </div>
     )

@@ -1,9 +1,9 @@
 
 
-const ButtonBetter = ({ content }) => {
+const ButtonBetter = ({ content, onClick }) => {
 
     return(
-        <button className="btn-better">{content}</button>
+        <button className="btn-better" onClick={onClick}>{content}</button>
     )
 }
 
