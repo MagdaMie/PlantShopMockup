@@ -403,3 +403,57 @@ p {
   margin: 20px 0;
   padding: 10px 30px;
 }
+
+/* shopping cart */
+
+.cart-page-content {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.cart-page-content h3 {
+  margin: 25px;
+}
+
+.cart-page-content .title p {
+  margin: 30px 25px;
+}
+
+/* shopping cart element */
+.shopping-cart-element{
+  display: flex;
+  margin-top: 10px;
+}
+
+.shopping-cart-element .product,
+.shopping-cart-element .quantity,
+.shopping-cart-element .price,
+.shopping-cart-element .remove {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.shopping-cart-element .quantity p:not(:last-child) {
+  display: flex;
+  margin-right: 10px;
+}
+
+.shopping-cart-element .product img {
+  height: 150px;
+}
+
+
+
+
+/* Price counter */
+.price-counter {
+  margin: 10px;
+}
+
+.price-counter > * {
+ display: flex;
+ gap: 10px;
+ margin-bottom: 7px;
+}
+
