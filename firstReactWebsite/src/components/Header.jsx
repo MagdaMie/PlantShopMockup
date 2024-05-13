@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const Header = () => {
+const Header = ({noOfCartProducts}) => {
 
     return(
     <div className="header">
@@ -11,7 +11,7 @@ const Header = () => {
                 <li><Link to={"/shop"}>SHOP</Link></li>
                 <li><Link to={"/contact"}>CONTACT</Link></li>
                 <li><Link to={"/FAQ"}>FAQ</Link></li>
-                <li><Link to={"/cart"}>CART</Link></li>
+                <li><Link to={"/cart"}>CART {noOfCartProducts}</Link></li>
             </ul>
         </div>
    </div>

@@ -18,6 +18,7 @@ const ContactPage = () => {
                 <input type="text" placeholder="name" />
                 <input type="email" placeholder="e-mail" />
                 <textarea name="message" id="message" placeholder="enter your message..."></textarea>
+                <button type="submit">Sent</button>
             </form>
         </div>
 

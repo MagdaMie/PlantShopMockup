@@ -39,7 +39,7 @@ function App() {
 
   return (
     <>
-    <Header />
+    <Header noOfCartProducts={plantsInTheCart.length}/>
     <Routes>
     <Route path="/" element={<Home />}/>
     <Route path="/shop" element={<Products products={products}
