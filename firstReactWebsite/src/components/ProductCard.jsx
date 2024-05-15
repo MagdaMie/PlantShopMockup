@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom"
 import ButtonBetter from "./ButtonBetter"
 
+
 const ProductCard = ({ product, addPlant}) => {
     const buttonContent = 'Add to the cart'
+
     return(
         <div className="product-card">
-            <Link to={'/product'}>
+            <Link to={`/product/${product.id}`}>
             <div className="img-wrap">
                 <img src={product.img} alt="" />
             </div>

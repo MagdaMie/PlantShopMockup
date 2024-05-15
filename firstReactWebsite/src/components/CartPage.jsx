@@ -21,7 +21,7 @@ const CartPage = ({cartProducts, removePlant}) => {
                 )}
             <PriceCounter 
             cartProducts={cartProducts}/>
-             <Link to={'/shop'}><ButtonBetter content={'< continue shopping'}/></Link>
+             <Link to={'/shop'}><ButtonBetter content={'continue shopping'}/></Link>
             </div>
         </div>
     )
