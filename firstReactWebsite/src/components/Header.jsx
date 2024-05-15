@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 const Header = ({noOfCartProducts}) => {
-
+    
     return(
     <div className="header">
         <div className="logo"><img src="/Logo.png" alt="" /></div>

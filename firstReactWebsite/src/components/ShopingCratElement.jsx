@@ -1,6 +1,15 @@
-
+import { useState } from "react"
 
 const ShoppingCartElement = ({cartProduct, removePlant}) => {
+ 
+    const[counter, setCounter] = useState(cartProduct.counter)
+    const incrementCounter = () => {
+        setCounter(prevCounter => prevCounter +=1)
+    }
+
+    const decrementCounter = () => {
+        setCounter(prevCounter => prevCounter -=1)
+    }
 
     return (
         <div className="shopping-cart-element">
@@ -8,16 +17,16 @@ const ShoppingCartElement = ({cartProduct, removePlant}) => {
                 <img src={cartProduct.img} alt="" />
                 <p>{cartProduct.name}</p>
             </div>
-            {/* <div className="quantity">
-                <p>-</p>
-                <p>3</p>
-                <p>+</p>
-            </div> */}
+            <div className="quantity">
+                <p onClick={decrementCounter}>-</p>
+                <p>{counter}</p>
+                <p onClick={incrementCounter}>+</p>
+            </div>
             <div className="price">
                 <p>${cartProduct.price}</p>
             </div>
             <div className="remove">
-                <p onClick={() => removePlant(cartProduct.id)}>x</p>
+                <p onClick={() => removePlant(cartProduct)}>x</p>
             </div>
         </div>
     )

@@ -32,17 +32,31 @@ function App() {
   const[plantsInTheCart, setPlantsInTheCart] = useState([])
 
   const handleAddPlantTheCart = (product) => {
-    setPlantsInTheCart([...plantsInTheCart, product])
+    if(plantsInTheCart.some(plant => plant.id === product.id)) {
+      product.counter += 1
+    } else {
+    setPlantsInTheCart([...plantsInTheCart, product])}
   }
 
-  const handleRemovePlantFromTheCart = (id) => {
-    setPlantsInTheCart(plantsInTheCart.filter(plantInTheCart => plantInTheCart.id !== id))
+  const handleRemovePlantFromTheCart = (product) => {
+    setPlantsInTheCart(plantsInTheCart.filter(plantInTheCart => plantInTheCart.id !== product.id))
+    product.counter = 1
   }
+
+// WORK ON COUNTER - doesnt work i guess it needs useEffect
+const countersArray = plantsInTheCart.map(plantsInTheCart => plantsInTheCart.counter)
+console.log(countersArray);
+console.log(typeof countersArray);
+
+const noOfCartProducts = countersArray.reduce((total, counter) => total + counter, 0)
+console.log(noOfCartProducts);
+console.log(typeof noOfCartProducts);
+
 
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <Header noOfCartProducts={plantsInTheCart.length}/>
+      <Header noOfCartProducts={noOfCartProducts}/>
       <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/shop" element={<Products  products={products}
