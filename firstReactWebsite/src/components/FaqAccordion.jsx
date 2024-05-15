@@ -66,7 +66,7 @@ const FaqAccordion = () => {
               openElement(faq.id)}
             } 
             isOpen={isOpen}
-            style={{transform: isOpen? 'rotate(-90deg)' : 'rotate(90deg)' }} />
+            style={{transform: isOpen? 'rotate(180deg)' : 'rotate(0deg)' }} />
         })}
         </div>
        

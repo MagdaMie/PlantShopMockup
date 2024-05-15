@@ -1,12 +1,15 @@
 import { Route, Routes } from "react-router-dom"
-import Header from "./components/Header"
-import ProductPage from "./components/ProductPage"
-import Home from "./components/Home"
-import Products from "./components/Products"
-import FaqPage from "./components/FaqPage"
-import ContactPage from "./components/ContactPage"
-import CartPage from "./components/CartPage"
-import { useState } from "react"
+import { Suspense, useState, lazy } from "react"
+const Header = lazy(() => import("./components/Header"))
+
+const ProductPage = lazy(() => import("./components/ProductPage"))
+const Home = lazy(() => import("./components/Home"))
+const Products = lazy(() => import("./components/Products"))
+const FaqPage = lazy(() => import("./components/FaqPage"))
+const ContactPage = lazy(() => import("./components/ContactPage"))
+const CartPage = lazy(() => import("./components/CartPage"))
+
+
 
 
 export const products = [
@@ -38,21 +41,22 @@ function App() {
 
 
   return (
-    <>
-    <Header noOfCartProducts={plantsInTheCart.length}/>
-    <Routes>
-    <Route path="/" element={<Home />}/>
-    <Route path="/shop" element={<Products products={products}
-    addPlant={handleAddPlantTheCart}/>}/>
-    <Route path="/contact" element={<ContactPage />}/>
-    <Route path="/FAQ" element={<FaqPage />}/>
-    <Route path="/product/:id" element={<ProductPage 
-    addPlant={handleAddPlantTheCart}/>}/>
-    <Route path="/cart" element={<CartPage 
+    <Suspense fallback={<div>Loading...</div>}>
+      <Header noOfCartProducts={plantsInTheCart.length}/>
+      <Routes>
+      <Route path="/" element={<Home />}/>
+      <Route path="/shop" element={<Products  products={products}
+      addPlant={handleAddPlantTheCart}/>}/>
+      <Route path="/contact" element={<ContactPage />}/>
+      <Route path="/FAQ" element={<FaqPage />}/>
+      <Route path="/product/:id" element={<ProductPage 
+      addPlant={handleAddPlantTheCart}/>}/>
+      <Route path="/cart" element={<CartPage 
     cartProducts={plantsInTheCart}
     removePlant={handleRemovePlantFromTheCart}/>}/>
     </Routes>
-    </>
+    </Suspense>
+
   )
 }
 
