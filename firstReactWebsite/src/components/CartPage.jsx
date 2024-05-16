@@ -3,7 +3,7 @@ import ShoppingCartElement from "./ShopingCratElement"
 import PriceCounter from "./PriceCounter"
 import { Link } from "react-router-dom"
 
-const CartPage = ({cartProducts, removePlant}) => {
+const CartPage = ({cartProducts, totalPrice, shippingCost, removePlant}) => {
     return (
         <div className="catr-page">
             <div className="cart-page-content">
@@ -20,7 +20,9 @@ const CartPage = ({cartProducts, removePlant}) => {
                 }
                 )}
             <PriceCounter 
-            cartProducts={cartProducts}/>
+            cartProducts={cartProducts}
+            totalPrice={totalPrice}
+            shippingCost={shippingCost}/>
              <Link to={'/shop'}><ButtonBetter content={'continue shopping'}/></Link>
             </div>
         </div>

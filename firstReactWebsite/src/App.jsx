@@ -43,14 +43,28 @@ function App() {
     product.counter = 1
   }
 
-// WORK ON COUNTER - doesnt work i guess it needs useEffect
-const countersArray = plantsInTheCart.map(plantsInTheCart => plantsInTheCart.counter)
-console.log(countersArray);
-console.log(typeof countersArray);
 
-const noOfCartProducts = countersArray.reduce((total, counter) => total + counter, 0)
-console.log(noOfCartProducts);
-console.log(typeof noOfCartProducts);
+  // TO NIE DZIALA - PIERWOTNIE BYLO W COMPONENCIE ShoppingCartEelement, WYCIAGNELAM WYZEJ, ALE NIE MAM POMYSLU
+  // const[counter, setCounter] = useState(1)
+  // const incrementCounter = () => {
+  //     setCounter(prevCounter => prevCounter +=1)
+  // }
+
+  // const decrementCounter = () => {
+  //     setCounter(prevCounter => prevCounter -=1)
+  // }
+
+  let noOfCartProducts = 0;
+  plantsInTheCart.forEach(plant => {
+    noOfCartProducts += plant.counter
+  })
+
+  let totalPrice = 0;
+  plantsInTheCart.forEach(plant => {
+    totalPrice += (plant.counter*plant.price)
+  })
+
+  const shippingCost = totalPrice>150 ? 0 : 10 * noOfCartProducts
 
 
 
@@ -67,6 +81,8 @@ console.log(typeof noOfCartProducts);
       addPlant={handleAddPlantTheCart}/>}/>
       <Route path="/cart" element={<CartPage 
     cartProducts={plantsInTheCart}
+    totalPrice={totalPrice}
+    shippingCost={shippingCost}
     removePlant={handleRemovePlantFromTheCart}/>}/>
     </Routes>
     </Suspense>

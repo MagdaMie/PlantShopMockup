@@ -1,7 +1,8 @@
 import { useState } from "react"
 
 const ShoppingCartElement = ({cartProduct, removePlant}) => {
- 
+    
+    // TO SAMO CO JEST W APP.JSX
     const[counter, setCounter] = useState(cartProduct.counter)
     const incrementCounter = () => {
         setCounter(prevCounter => prevCounter +=1)
