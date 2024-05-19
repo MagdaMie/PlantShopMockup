@@ -1,16 +1,7 @@
-import { useState } from "react"
 
-const ShoppingCartElement = ({cartProduct, removePlant}) => {
-    
-    // TO SAMO CO JEST W APP.JSX
-    const[counter, setCounter] = useState(cartProduct.counter)
-    const incrementCounter = () => {
-        setCounter(prevCounter => prevCounter +=1)
-    }
 
-    const decrementCounter = () => {
-        setCounter(prevCounter => prevCounter -=1)
-    }
+const ShoppingCartElement = ({cartProduct, removePlant, addPlant, decrementCounter}) => {
+
 
     return (
         <div className="shopping-cart-element">
@@ -19,12 +10,12 @@ const ShoppingCartElement = ({cartProduct, removePlant}) => {
                 <p>{cartProduct.name}</p>
             </div>
             <div className="quantity">
-                <p onClick={decrementCounter}>-</p>
-                <p>{counter}</p>
-                <p onClick={incrementCounter}>+</p>
+                <p onClick={() => decrementCounter(cartProduct)}>-</p>
+                <p>{cartProduct.counter}</p>
+                <p onClick={() => addPlant(cartProduct)}>+</p>
             </div>
             <div className="price">
-                <p>${cartProduct.price}</p>
+                <p>${cartProduct.price*cartProduct.counter}</p>
             </div>
             <div className="remove">
                 <p onClick={() => removePlant(cartProduct)}>x</p>

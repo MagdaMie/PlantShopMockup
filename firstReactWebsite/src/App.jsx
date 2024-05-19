@@ -32,16 +32,36 @@ function App() {
   const[plantsInTheCart, setPlantsInTheCart] = useState([])
 
   const handleAddPlantTheCart = (product) => {
+  
     if(plantsInTheCart.some(plant => plant.id === product.id)) {
-      product.counter += 1
+     const newPlantsInTheCart = plantsInTheCart.map(productItem => {
+        if(productItem.id === product.id){
+         return {...productItem, counter: productItem.counter + 1}
+        } else {
+          return productItem
+        }
+      })
+      setPlantsInTheCart(newPlantsInTheCart)
     } else {
     setPlantsInTheCart([...plantsInTheCart, product])}
   }
 
   const handleRemovePlantFromTheCart = (product) => {
     setPlantsInTheCart(plantsInTheCart.filter(plantInTheCart => plantInTheCart.id !== product.id))
-    product.counter = 1
   }
+
+  const handleDecrementCounter = (product) => {
+    if(product.counter<=1) return
+    const newPlantsInTheCart = plantsInTheCart.map(productItem => {
+      if(productItem.id === product.id){
+       return {...productItem, counter: productItem.counter - 1}
+      } else {
+        return productItem
+      }
+    })
+    setPlantsInTheCart(newPlantsInTheCart)
+  }
+  
 
 
   // TO NIE DZIALA - PIERWOTNIE BYLO W COMPONENCIE ShoppingCartEelement, WYCIAGNELAM WYZEJ, ALE NIE MAM POMYSLU
@@ -71,7 +91,7 @@ function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Header noOfCartProducts={noOfCartProducts}/>
-      <Routes>
+    <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/shop" element={<Products  products={products}
       addPlant={handleAddPlantTheCart}/>}/>
@@ -80,10 +100,12 @@ function App() {
       <Route path="/product/:id" element={<ProductPage 
       addPlant={handleAddPlantTheCart}/>}/>
       <Route path="/cart" element={<CartPage 
-    cartProducts={plantsInTheCart}
-    totalPrice={totalPrice}
-    shippingCost={shippingCost}
-    removePlant={handleRemovePlantFromTheCart}/>}/>
+      cartProducts={plantsInTheCart}
+      totalPrice={totalPrice}
+      shippingCost={shippingCost}
+      removePlant={handleRemovePlantFromTheCart}
+      addPlant={handleAddPlantTheCart}
+      decrementCounter={handleDecrementCounter}/>}/>
     </Routes>
     </Suspense>
 

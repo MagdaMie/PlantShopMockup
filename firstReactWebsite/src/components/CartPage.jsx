@@ -3,7 +3,7 @@ import ShoppingCartElement from "./ShopingCratElement"
 import PriceCounter from "./PriceCounter"
 import { Link } from "react-router-dom"
 
-const CartPage = ({cartProducts, totalPrice, shippingCost, removePlant}) => {
+const CartPage = ({cartProducts, totalPrice, shippingCost, removePlant, addPlant, decrementCounter}) => {
     return (
         <div className="catr-page">
             <div className="cart-page-content">
@@ -16,7 +16,9 @@ const CartPage = ({cartProducts, totalPrice, shippingCost, removePlant}) => {
                     cartProduct={cartProduct}
                     key={cartProduct.id}
                     is={cartProduct.id}
-                    removePlant={removePlant}/>
+                    removePlant={removePlant}
+                    addPlant={addPlant}
+                    decrementCounter={decrementCounter}/>
                 }
                 )}
             <PriceCounter 
