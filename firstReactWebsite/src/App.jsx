@@ -89,25 +89,64 @@ function App() {
 
 
   return (
+    <>
     <Suspense fallback={<div>Loading...</div>}>
       <Header noOfCartProducts={noOfCartProducts}/>
-    <Routes>
-      <Route path="/" element={<Home />}/>
-      <Route path="/shop" element={<Products  products={products}
-      addPlant={handleAddPlantTheCart}/>}/>
-      <Route path="/contact" element={<ContactPage />}/>
-      <Route path="/FAQ" element={<FaqPage />}/>
-      <Route path="/product/:id" element={<ProductPage 
-      addPlant={handleAddPlantTheCart}/>}/>
-      <Route path="/cart" element={<CartPage 
-      cartProducts={plantsInTheCart}
-      totalPrice={totalPrice}
-      shippingCost={shippingCost}
-      removePlant={handleRemovePlantFromTheCart}
-      addPlant={handleAddPlantTheCart}
-      decrementCounter={handleDecrementCounter}/>}/>
-    </Routes>
     </Suspense>
+    <Routes>
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <Route 
+        path="/" 
+        element={<Home />}/>
+      </Suspense>
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <Route 
+        path="/shop" 
+        element={
+          <Products  
+          products={products}
+          addPlant={handleAddPlantTheCart}/>}/>
+      </Suspense>
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <Route 
+        path="/contact" 
+        element={<ContactPage />}/>
+      </Suspense>
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <Route 
+        path="/FAQ" 
+        element={<FaqPage />}/>
+      </Suspense>
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <Route 
+        path="/product/:id" 
+        element={
+          <ProductPage 
+          addPlant={handleAddPlantTheCart}/>}/>
+      </Suspense>
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <Route 
+        path="/cart" 
+        element={
+          <CartPage 
+          cartProducts={plantsInTheCart}
+          totalPrice={totalPrice}
+          shippingCost={shippingCost}
+          removePlant={handleRemovePlantFromTheCart}
+          addPlant={handleAddPlantTheCart}
+          decrementCounter={handleDecrementCounter}/>}/>
+      </Suspense>
+      
+    </Routes>
+    </>
+    
+
 
   )
 }
