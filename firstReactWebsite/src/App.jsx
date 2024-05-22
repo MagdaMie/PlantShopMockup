@@ -95,53 +95,65 @@ function App() {
     </Suspense>
     <Routes>
 
-      <Suspense fallback={<div>Loading...</div>}>
+      
         <Route 
         path="/" 
-        element={<Home />}/>
-      </Suspense>
+        element={
+        <Suspense fallback={<div>Loading...</div>}>
+        <Home />
+        </Suspense>}/>
+      
 
-      <Suspense fallback={<div>Loading...</div>}>
+      
         <Route 
         path="/shop" 
         element={
+          <Suspense fallback={<div>Loading...</div>}>
           <Products  
           products={products}
-          addPlant={handleAddPlantTheCart}/>}/>
-      </Suspense>
+          addPlant={handleAddPlantTheCart}/>
+          </Suspense>}/>
+      
 
-      <Suspense fallback={<div>Loading...</div>}>
+      
         <Route 
         path="/contact" 
-        element={<ContactPage />}/>
-      </Suspense>
+        element={
+          <Suspense fallback={<div>Loading...</div>}>
+            <ContactPage />
+            </Suspense>}/>
+      
 
-      <Suspense fallback={<div>Loading...</div>}>
+      
         <Route 
         path="/FAQ" 
-        element={<FaqPage />}/>
-      </Suspense>
+        element={
+          <Suspense fallback={<div>Loading...</div>}><FaqPage /></Suspense>}/>
+      
 
-      <Suspense fallback={<div>Loading...</div>}>
+      
         <Route 
         path="/product/:id" 
         element={
+          <Suspense fallback={<div>Loading...</div>}>
           <ProductPage 
-          addPlant={handleAddPlantTheCart}/>}/>
-      </Suspense>
+          addPlant={handleAddPlantTheCart}/></Suspense>}/>
+      
 
-      <Suspense fallback={<div>Loading...</div>}>
+      
         <Route 
         path="/cart" 
         element={
+          <Suspense fallback={<div>Loading...</div>}>
           <CartPage 
           cartProducts={plantsInTheCart}
           totalPrice={totalPrice}
           shippingCost={shippingCost}
           removePlant={handleRemovePlantFromTheCart}
           addPlant={handleAddPlantTheCart}
-          decrementCounter={handleDecrementCounter}/>}/>
-      </Suspense>
+          decrementCounter={handleDecrementCounter}/>
+          </Suspense>}/>
+      
       
     </Routes>
     </>
