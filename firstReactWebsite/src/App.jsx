@@ -9,6 +9,8 @@ const FaqPage = lazy(() => import("./components/FaqPage"));
 const ContactPage = lazy(() => import("./components/ContactPage"));
 const CartPage = lazy(() => import("./components/CartPage"));
 
+const Footer = lazy(() => import("./components/Footer"))
+
 export const products = [
   { id: 1, name: "Monstera", price: 50, img: "/1.png", counter: 1 },
   { id: 2, name: "Snake Plant", price: 35, img: "/2.png", counter: 1 },
@@ -151,6 +153,9 @@ function App() {
           }
         />
       </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Footer noOfCartProducts={noOfCartProducts} />
+      </Suspense>
     </>
   );
 }

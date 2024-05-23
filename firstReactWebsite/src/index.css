@@ -89,13 +89,22 @@ p {
 }
 
 
-.navigation ul {
+.nav-h {
   display: flex;
   margin: 2rem;
 }
 
-.navigation ul li {
+.nav-item-h {
   margin: 0 1.5rem;
+}
+
+.nav-v {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item-v {
+  margin: 0.5rem 0;
 }
 
 /* Baner */
