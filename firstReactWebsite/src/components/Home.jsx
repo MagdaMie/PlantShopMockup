@@ -1,7 +1,7 @@
 import Baner from "./Baner";
 import Hero from "./Hero";
 import Benefits from "./Benefits";
-import { InstagramEmbed } from 'react-social-media-embed';
+import Blogs from "./Blogs";
 
 const AboutMe = () => {
     return(
@@ -9,6 +9,7 @@ const AboutMe = () => {
             <Baner /> 
             <Hero />
             <Benefits />
+            <Blogs />
         </>
     )
 }
