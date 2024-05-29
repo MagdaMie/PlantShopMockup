@@ -42,7 +42,7 @@ const PriceCounter = ({cartProducts, totalPrice, shippingCost}) => {
                 <p>${totalPrice + shippingCost}</p>
             </div>
             <ButtonBetter
-            content={'Pay'} 
+            content={'Checkout'} 
             onClick={handlePayment}
             disable={isMutating}
             />

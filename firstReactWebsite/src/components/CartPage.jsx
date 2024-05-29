@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 const CartPage = ({cartProducts, totalPrice, shippingCost, removePlant, addPlant, decrementCounter}) => {
     return (
-        <div className="catr-page">
+        <div className="cart-page">
             <div className="cart-page-content">
                 <div className="title">
                   <h3>Shopping Cart</h3>
