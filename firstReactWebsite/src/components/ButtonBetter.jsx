@@ -1,9 +1,9 @@
 
 
-const ButtonBetter = ({ content, onClick }) => {
+const ButtonBetter = ({ content, onClick, disable }) => {
 
     return(
-        <button className="btn-better" onClick={onClick}>{content}</button>
+        <button className="btn-better" onClick={onClick} disabled={disable}>{content}</button>
     )
 }
 
