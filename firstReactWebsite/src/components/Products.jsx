@@ -1,18 +1,15 @@
 import ProductCard from "./ProductCard";
 
-const Products = ({products, addPlant}) => {
+const Products = ({ products, addPlant }) => {
+  return (
+    <div className="products">
+      {products.map((product) => {
+        return (
+          <ProductCard product={product} key={product.id} addPlant={addPlant} />
+        );
+      })}
+    </div>
+  );
+};
 
-    return(
-        <div className="products">
-            {products.map(product => {
-            return <ProductCard 
-            product={product}
-            key={product.id}
-            addPlant={addPlant}
-            />
-        })}
-        </div>
-    )
-}
-
-export default Products
+export default Products;

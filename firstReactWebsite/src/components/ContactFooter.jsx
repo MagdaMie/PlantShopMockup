@@ -1,7 +1,7 @@
-import ButtonBetter from './ButtonBetter'
-import { Link } from 'react-router-dom';
+import ButtonBetter from "./ButtonBetter";
+import { Link } from "react-router-dom";
 const ContactFooter = () => {
-  const content = "Contact Us"
+  const content = "Contact Us";
   return (
     <div>
       <div className="address">
@@ -10,10 +10,10 @@ const ContactFooter = () => {
         <p>07888</p>
       </div>
       <Link to={"/contact"}>
-      <ButtonBetter content={content}/>
+        <ButtonBetter content={content} />
       </Link>
     </div>
   );
 };
 
-export default ContactFooter
+export default ContactFooter;

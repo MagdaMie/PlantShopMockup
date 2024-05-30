@@ -11,11 +11,10 @@
   text-rendering: optimizeLegibility;
 
   --very-dark-gren: #273526;
-  --dark-green: #45624E;
-  --green:#6d8777;
-  --light-green: #C0cfb2;
+  --dark-green: #45624e;
+  --green: #6d8777;
+  --light-green: #c0cfb2;
   --very-light-green: #e4e6d9;
-
 }
 
 body {
@@ -40,7 +39,7 @@ h3 {
 }
 
 h2 {
-  font-size: 1.25rem;;
+  font-size: 1.25rem;
 }
 
 p {
@@ -58,7 +57,7 @@ p {
   padding: 8px 18px;
   border-radius: 20px;
 }
-.btn-better:hover{
+.btn-better:hover {
   background-color: var(--green);
 }
 .margin {
@@ -87,7 +86,6 @@ p {
   margin: 2rem;
 }
 
-
 .nav-h {
   display: flex;
   margin: 2rem;
@@ -112,7 +110,7 @@ p {
   width: 100%;
   height: 550px;
   background-image: url(/Baner1.jpg);
-  background-size: cover ;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -142,12 +140,11 @@ p {
   align-items: center;
 }
 
-.hero .img-wrap
-{
- padding: 3rem;
- display: flex;
- justify-content: center;
- align-items: center;
+.hero .img-wrap {
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero .img-wrap img {
@@ -158,7 +155,7 @@ p {
 
 .benefits {
   display: grid;
-  grid-template-columns:  1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   /* gap: 50px; */
   background-color: var(--very-dark-gren);
@@ -186,17 +183,15 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 .product-card {
   margin: 20px;
 }
 
-.product-card .img-wrap{
+.product-card .img-wrap {
   width: 250px;
   height: 350px;
   position: relative;
-
 }
 .product-card .img-wrap img {
   width: 250px;
@@ -210,9 +205,8 @@ p {
   transform: scale(1.1);
 }
 
-
 .product-details {
-  border: 2px solid #45624E;
+  border: 2px solid #45624e;
   padding: 50px 20px 20px;
   border-radius: 15px;
 }
@@ -256,13 +250,13 @@ p {
 }
 
 .faq .anwser {
-  background-color: #C0cfb2;
+  background-color: #c0cfb2;
   color: #242424;
   padding: 25px;
   margin-top: 10px;
 }
 
-.faq .question p, 
+.faq .question p,
 .faq .anwser p {
   font-size: 1.25rem;
 }
@@ -276,7 +270,7 @@ p {
   width: 100%;
   height: 450px;
   background-image: url(/FAQbaner.png);
-  background-size: cover ;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -308,14 +302,12 @@ p {
   left: 40%;
   height: 75vh;
   width: auto;
-
 }
 
 .product-description {
   background-color: var(--light-green);
   display: flex;
   justify-content: center;
-
 }
 
 .product-description h3 {
@@ -366,30 +358,29 @@ p {
 
 /* contact page */
 
-.contact-page{
+.contact-page {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
   height: 100vh;
 }
 
-
-.contact-page-left{
+.contact-page-left {
   background-image: url(/siteBaner.png);
-  background-size: 60% ;
+  background-size: 60%;
   background-repeat: no-repeat;
   position: relative;
 }
 
-.contact-page-left h3{
+.contact-page-left h3 {
   font-size: 4rem;
   text-transform: lowercase;
-  position:absolute;
-  top:40%;
-  left:50%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
 }
 
-.contact-page-left h3 span{
+.contact-page-left h3 span {
   display: block;
   line-height: 4.5rem;
 }
@@ -430,7 +421,7 @@ p {
 }
 
 /* shopping cart element */
-.shopping-cart-element{
+.shopping-cart-element {
   display: flex;
   margin-top: 10px;
 }
@@ -453,18 +444,16 @@ p {
   height: 150px;
 }
 
-
 /* Price counter */
 .price-counter {
   margin: 10px;
 }
 
 .price-counter > * {
- display: flex;
- gap: 10px;
- margin-bottom: 7px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 7px;
 }
-
 
 /* Footer */
 .footer {
