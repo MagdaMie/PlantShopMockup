@@ -1,4 +1,4 @@
-import ButtonBetter from "./ButtonBetter";
+import Button from "./Button";
 import { Link } from "react-router-dom";
 const ContactFooter = () => {
   const content = "Contact Us";
@@ -10,7 +10,7 @@ const ContactFooter = () => {
         <p>07888</p>
       </div>
       <Link to={"/contact"}>
-        <ButtonBetter content={content} />
+        <Button content={content} />
       </Link>
     </div>
   );

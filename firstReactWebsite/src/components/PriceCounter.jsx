@@ -1,4 +1,4 @@
-import ButtonBetter from "./ButtonBetter";
+import Button from "./Button";
 import useSWRMutation from "swr/mutation";
 
 const PriceCounter = ({ cartProducts, totalPrice, shippingCost }) => {
@@ -48,7 +48,7 @@ const PriceCounter = ({ cartProducts, totalPrice, shippingCost }) => {
           <p>Total</p>
           <p>${totalPrice + shippingCost}</p>
         </div>
-        <ButtonBetter
+        <Button
           content={"Checkout"}
           onClick={handlePayment}
           disable={isMutating}

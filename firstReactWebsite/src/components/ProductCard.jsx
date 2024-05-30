@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ButtonBetter from "./ButtonBetter";
+import Button from "./Button";
 
 const ProductCard = ({ product, addPlant }) => {
   const buttonContent = "Add to the cart";
@@ -17,10 +17,7 @@ const ProductCard = ({ product, addPlant }) => {
           <p className="product-price">${product.price}</p>
         </div>
         <div className="button-wrap">
-          <ButtonBetter
-            content={buttonContent}
-            onClick={() => addPlant(product)}
-          />
+          <Button content={buttonContent} onClick={() => addPlant(product)} />
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import ButtonBetter from "../components/ButtonBetter";
+import Button from "../components/Button";
 import ShoppingCartElement from "../components/ShopingCratElement";
 import PriceCounter from "../components/PriceCounter";
 import { Link } from "react-router-dom";
@@ -36,7 +36,7 @@ const CartPage = ({
           shippingCost={shippingCost}
         />
         <Link to={"/shop"}>
-          <ButtonBetter content={"continue shopping"} />
+          <Button content={"continue shopping"} />
         </Link>
       </div>
     </div>

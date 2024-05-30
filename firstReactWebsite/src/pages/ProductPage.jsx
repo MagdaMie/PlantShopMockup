@@ -1,6 +1,6 @@
-import ButtonBetter from "../components/ButtonBetter.jsx";
+import Button from "../components/Button.jsx";
 import { useParams } from "react-router-dom";
-import { products } from "../App.jsx";
+import products from "../data/products.jsx";
 
 const ProductPage = ({ addPlant }) => {
   const { id } = useParams();
@@ -49,7 +49,7 @@ const ProductPage = ({ addPlant }) => {
             </ul>
           </div>
           <div>
-            <ButtonBetter
+            <Button
               content={"Add to the cart"}
               onClick={() => addPlant(product)}
               product={products}
