@@ -1,10 +1,13 @@
-const BenefitCard = ({ title, content, icon }) => {
+const BenefitCard = ({ title, content, icon: Icon }) => {
   return (
-    <div className="benefit-card">
-      <img src={icon} alt="" />
-      <div className="benefit-wrap">
-        <h2>{title}</h2>
-        <p>{content}</p>
+    <div className="flex justify-center items-center">
+      <div className="text-7xl text-customGreen-light m-4">
+        <Icon />
+      </div>
+
+      <div className="">
+        <h2 className="font-crimson text-[1.75rem]">{title}</h2>
+        <p className="font-oxygen text-[1rem]">{content}</p>
       </div>
     </div>
   );
