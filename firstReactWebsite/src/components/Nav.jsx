@@ -1,23 +1,26 @@
-import { Link } from "react-router-dom";
+import NavLink from "./NavLink.jsx";
 
-const Nav = ({ numberOfCartProducts, displayNav, displayNavElement }) => {
+const Nav = ({ numberOfCartProducts, displayHorizontal }) => {
+  const navH = "flex m-8";
+  const navV = "flex flex-col";
+
   return (
-    <div className={displayNav}>
-      <Link className={displayNavElement} to={"/"}>
+    <div className={displayHorizontal ? navH : navV}>
+      <NavLink displayHorizontal={displayHorizontal} to={"/"}>
         HOME
-      </Link>
-      <Link className={displayNavElement} to={"/shop"}>
+      </NavLink>
+      <NavLink displayHorizontal={displayHorizontal} to={"/shop"}>
         SHOP
-      </Link>
-      <Link className={displayNavElement} to={"/contact"}>
+      </NavLink>
+      <NavLink displayHorizontal={displayHorizontal} to={"/contact"}>
         CONTACT
-      </Link>
-      <Link className={displayNavElement} to={"/FAQ"}>
+      </NavLink>
+      <NavLink displayHorizontal={displayHorizontal} to={"/FAQ"}>
         FAQ
-      </Link>
-      <Link className={displayNavElement} to={"/cart"}>
+      </NavLink>
+      <NavLink displayHorizontal={displayHorizontal} to={"/cart"}>
         CART {numberOfCartProducts}
-      </Link>
+      </NavLink>
     </div>
   );
 };

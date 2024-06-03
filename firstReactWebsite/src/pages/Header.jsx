@@ -1,15 +1,15 @@
 import Nav from "../components/Nav";
+import Logo from "./Logo";
 
 const Header = ({ numberOfCartProducts }) => {
   return (
-    <div className="header">
-      <div className="logo">
-        <img src="/Logo.png" alt="" />
+    <div className="flex items-center justify-between w-full h-[13vh] sticky top-0 bg-darkGray">
+      <div className="m-8">
+        <Logo />
       </div>
       <Nav
         numberOfCartProducts={numberOfCartProducts}
-        displayNav={"nav-h"}
-        displayNavElement={"nav-item-h"}
+        displayHorizontal={true}
       />
     </div>
   );

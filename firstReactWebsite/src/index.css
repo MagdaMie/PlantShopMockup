@@ -46,63 +46,23 @@ p {
   font-size: 1rem;
 }
 
-.btn {
-  font-size: 1.25rem;
-  padding: 0.5rem 1rem;
-  border: 1.5px solid white;
-}
 
-.btn-better {
-  background-color: var(--dark-green);
-  padding: 8px 18px;
-  border-radius: 20px;
-}
-.btn-better:hover {
-  background-color: var(--green);
-}
 .margin {
   margin: 1rem;
 }
 
-/* Header */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100;
-  height: 13vh;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background-color: #242424;
-}
 
-.logo img {
-  height: 80px;
-  width: auto;
-}
 
-.logo {
-  margin: 2rem;
-}
-
-.nav-h {
-  display: flex;
-  margin: 2rem;
-}
+/* 
 
 .nav-item-h {
   margin: 0 1.5rem;
 }
 
-.nav-v {
-  display: flex;
-  flex-direction: column;
-}
 
 .nav-item-v {
   margin: 0.5rem 0;
-}
+} */
 
 /* Baner */
 
