@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        crimson: ['"Crimson Text"', 'serif'],
+        oxygen: ["Oxygen", 'sans-serif']
+      },
       colors: {
         customGreen: {
           'very-dark': '#273526',

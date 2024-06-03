@@ -1,20 +1,16 @@
-import { Link } from "react-router-dom";
 import Button from "./Button";
+import NavLink from "./NavLink"
+import BanerText from "./BanerText";
 
 const Baner = () => {
-  const button = "See our plants";
   return (
-    <div className="baner">
-      <div className="baner-container">
-        <h3 className="margin">Lorem ipsum dolor sit</h3>
-        <p className="margin">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quasi
-          reprehenderit labore natus molestiae culpa.
-        </p>
-        <Link to={"/shop"}>
-          <Button content={button} />
-        </Link>
-      </div>
+    <div className="w-full h-[500px] bg-cover bg-center bg-no-repeat flex flex-col justify-center" style={{ backgroundImage: "url('/Baner1.jpg')" }}>
+        <BanerText 
+        title={'Lorem ipsum dolor sit'}
+        paragraph={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quasi  reprehenderit labore natus molestiae culpa.'}/>
+        <NavLink to={"/shop"} className={'flex justify-center'}>
+          <Button content={"See our plants"} />
+        </NavLink>
     </div>
   );
 };
