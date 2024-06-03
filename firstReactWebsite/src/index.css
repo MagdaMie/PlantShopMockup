@@ -43,32 +43,6 @@ h2 {
 }
 
 
-/* Hero */
-
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 1rem 0;
-}
-
-.hero .about-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero .img-wrap {
-  padding: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero .img-wrap img {
-  height: 500px;
-}
-
 /* Benefits */
 
 .benefits {
@@ -78,6 +52,7 @@ h2 {
   /* gap: 50px; */
   background-color: var(--very-dark-gren);
   width: 100%;
+  height: 500px;
 }
 
 .benefit-card {

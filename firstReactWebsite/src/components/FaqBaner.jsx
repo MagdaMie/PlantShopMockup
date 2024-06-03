@@ -1,10 +1,10 @@
-import BanerText from "./BanerText";
+import TextContent from "./TextContent";
 
 const FaqBaner = () => {
   return (
     <div className="faq-baner">
       <div className="baner-bg">
-        <BanerText
+        <TextContent
           title={"frequently asked questions"}
           paragraph={
             "If you have a question that we don't anwser below, pleas fell free to contact us."
