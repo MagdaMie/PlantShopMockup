@@ -1,57 +1,31 @@
 // import { useEffect, useState } from "react"
 import BlogCard from "./BlogCard";
-import useSWR from "swr";
+import useFetchPosts from "../hooks/useFetchPosts";
 
 const Blogs = () => {
-  const fetcher = (url) => fetch(url).then((res) => res.json());
-
-  const { data, error } = useSWR(
-    "https://jsonplaceholder.typicode.com/posts",
-    fetcher
+  const { posts, loading, error } = useFetchPosts(
+    "https://jsonplaceholder.typicode.com/posts"
   );
 
-  if (error) return console.error(error);
-  if (!data) return <div>Loading...</div>;
+  if (error) {
+    console.error(error);
+    return <div>Error loading posts.</div>;
+  }
 
-  const posts = data.slice(0, 3);
-
-  // const [posts, setPosts] = useState([])
-
-  // USING PROMISE, THEN AND CATCH
-
-  // useEffect(() => {
-  //     fetch('https://jsonplaceholder.typicode.com/posts')
-  //         .then(response => {
-  //             if(!response.ok) {
-  //                 throw new Error('netwoek response was not ok')
-  //             }
-  //             return response.json()})
-  //         .then(data => setPosts(data.slice(0, 3)))
-  //         .catch(error => console.error('Error fetching posts:', error));
-  // }, []);
-
-  //USING ASYNC AND AWAIT
-
-  //  useEffect(() => {
-  //     const fetchPosts = async () => {
-  //         try {
-  //             const response = await fetch('https://jsonplaceholder.typicode.com/posts')
-  //             if(!response.ok) {
-  //                 throw new Error('network response was not okay')
-  //             }
-  //             const data = await response.json()
-  //             setPosts(data.slice(0, 3))
-  //         } catch(error) {
-  //             console.error(error)
-  //         }
-  //     }
-  //     fetchPosts()
-  //  }, [])
+  if (loading) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className="m-8 grid grid-cols-3 ">
       {posts.map((post) => (
-        <BlogCard key={post.id} title={post.title} body={post.body} />
+        <BlogCard
+          key={post.id}
+          title={post.title}
+          body={post.body}
+          author={post.author}
+          date={post.date}
+          authorImg={post.authorImg}
+          postImg={post.postImg}
+        />
       ))}
     </div>
   );

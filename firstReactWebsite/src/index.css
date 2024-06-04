@@ -33,25 +33,11 @@ body {
   background-color: #242424;
 }
 
-/* general */
-
 
 /* still used in footer */
 h2 {
   font-family: "Crimson Text", serif;
   font-size: 1.25rem;
-}
-
-
-/* Benefits */
-
-
-
-.benefit-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1.25rem;
 }
 
 
@@ -72,9 +58,9 @@ h2 {
 }
 .product-card .img-wrap img {
   width: 250px;
-  height: 350px;
+  height: auto;
   position: absolute;
-  top: 10%;
+  bottom: -10%;
   left: -15%;
 }
 
