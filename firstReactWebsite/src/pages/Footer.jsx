@@ -4,7 +4,7 @@ import ContactFooter from "../components/ContactFooter";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="flex justify-around items-center w-full py-8">
       <InstagramDisplayFooter />
       <Nav displayHorizontal={false} />
       <ContactFooter />

@@ -52,7 +52,6 @@ const ProductPage = ({ addPlant }) => {
             <Button
               content={"Add to the cart"}
               onClick={() => addPlant(product)}
-              product={products}
             />
           </div>
           <div></div>

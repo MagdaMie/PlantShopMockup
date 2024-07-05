@@ -1,11 +1,18 @@
+import InstagramImg from "./InstagramImg";
+
 const InstagramDisplayFooter = () => {
+  const pictures = ["/ig1.png", "/ig2.png", "/ig3.png"]
+
   return (
-    <div className="instagram-footer">
-      <h2>Followo us on instagram</h2>
-      <div className="instagram-imgs">
-        <img src="/ig1.png" alt="" />
-        <img src="/ig2.png" alt="" />
-        <img src="/ig3.png" alt="" />
+    <div>
+      <h2 className="font-crimson text-xlg mb-4">Followo us on instagram</h2>
+      <div className="flex  gap-2">
+       {pictures.map(picture => {
+        return <InstagramImg 
+        picture={picture}
+        key={picture}
+        />
+       })}
       </div>
     </div>
   );

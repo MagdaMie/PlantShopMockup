@@ -21,7 +21,6 @@ const useFetchPosts = (url) => {
   return { posts, loading: false, error: null };
 
 
-  // const posts = cutData.map(post => )
 
   // const [posts, setPosts] = useState([])
 

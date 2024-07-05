@@ -33,14 +33,6 @@ body {
   background-color: #242424;
 }
 
-
-/* still used in footer */
-h2 {
-  font-family: "Crimson Text", serif;
-  font-size: 1.25rem;
-}
-
-
 /* Shop */
 .products {
   display: flex;
@@ -316,21 +308,5 @@ h2 {
   margin-bottom: 7px;
 }
 
-/* Footer */
-.footer {
-  height: 25vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 50px;
-  background-color: #242424;
-}
 
-.footer .instagram-imgs {
-  display: flex;
-  gap: 10px;
-}
-.footer .instagram-imgs img {
-  height: 150px;
-  width: 150px;
-}
+
