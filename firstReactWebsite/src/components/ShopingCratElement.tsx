@@ -1,9 +1,19 @@
+import { Plant } from '../stores/cartStore';
+
+type ShoppingCartElementProps ={
+  cartProduct: Plant;
+  removePlant: (cartProduct: Plant) => void;
+  addPlant: (cartProduct: Plant) => void;
+  decrementCounter: (cartProduct: Plant) => void;
+  id: number;
+}
+
 const ShoppingCartElement = ({
   cartProduct,
   removePlant,
   addPlant,
   decrementCounter,
-}) => {
+}: ShoppingCartElementProps) => {
   return (
     <div className="shopping-cart-element">
       <div className="product">

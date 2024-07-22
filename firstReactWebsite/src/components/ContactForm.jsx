@@ -5,7 +5,7 @@ import { z } from "zod";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Example from "./Example";
+
 
 const schema = z.object({
   name: z.string().nonempty("Required"),
@@ -44,11 +44,13 @@ const ContactForm = () => {
         }
       );
       notifySuccess();
-      reset();
+      // maybe this is wrong
+      reset(); 
     } catch (error) {
       console.error("Failed to send message", error);
       notifyError();
     } finally {
+      // chane to counter
       setIsSending(false);
     }
   };

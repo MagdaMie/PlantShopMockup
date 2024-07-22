@@ -1,7 +1,10 @@
 import Nav from "../components/Nav";
 import Logo from "../components/Logo";
+type HeaderProps = {
+  numberOfCartProducts: number;
+}
 
-const Header = ({ numberOfCartProducts }) => {
+const Header = ({ numberOfCartProducts }: HeaderProps) => {
   return (
     <div className="flex items-center justify-between w-full h-[13vh] sticky top-0 z-10 bg-darkGray">
       <div className="m-8">

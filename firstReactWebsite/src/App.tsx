@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import useCartStore from "./stores/cartStore";
 import products from "./data/products";
+import { Plant } from "./stores/cartStore";
 
 const Header = lazy(() => import("./pages/Header"));
 const ProductPage = lazy(() => import("./pages/ProductPage"));
@@ -17,12 +18,10 @@ function App() {
     useCartStore();
 
   let numberOfCartProducts = 0;
-  cartProducts.forEach((plant) => {
-    numberOfCartProducts += plant.counter;
-  });
-
   let totalPrice = 0;
-  cartProducts.forEach((plant) => {
+
+  cartProducts.forEach((plant: Plant) => {
+    numberOfCartProducts += plant.counter;
     totalPrice += plant.counter * plant.price;
   });
 

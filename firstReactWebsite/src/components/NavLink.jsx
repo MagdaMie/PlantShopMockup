@@ -1,7 +1,0 @@
-import { Link } from "react-router-dom";
-
-const NavLink = ({ children, to, className }) => {
-  return <Link className={className} to={to}>{children}</Link>;
-};
-
-export default NavLink;
