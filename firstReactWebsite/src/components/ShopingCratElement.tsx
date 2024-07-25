@@ -1,12 +1,12 @@
-import { Plant } from '../stores/cartStore';
+import { Product } from "../types/types";
 
-type ShoppingCartElementProps ={
-  cartProduct: Plant;
-  removePlant: (cartProduct: Plant) => void;
-  addPlant: (cartProduct: Plant) => void;
-  decrementCounter: (cartProduct: Plant) => void;
+type ShoppingCartElementProps = {
+  cartProduct: Product;
+  removePlant: (cartProduct: Product) => void;
+  addPlant: (cartProduct: Product) => void;
+  decrementCounter: (cartProduct: Product) => void;
   id: number;
-}
+};
 
 const ShoppingCartElement = ({
   cartProduct,

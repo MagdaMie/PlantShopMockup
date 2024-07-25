@@ -1,10 +1,17 @@
 import Button from "./Button";
 import useSWRMutation from "swr/mutation";
+import { Product } from "../types/types";
 
-const PriceCounter = ({ cartProducts, totalPrice, shippingCost }) => {
+type PriceCounterProps ={
+  cartProducts: Product[];
+   totalPrice:number;
+    shippingCost:number;
+}
+
+const PriceCounter = ({ cartProducts, totalPrice, shippingCost }: PriceCounterProps) => {
   const products = cartProducts;
 
-  const fetchPayment = async (url) => {
+  const fetchPayment = async (url: string) => {
     return fetch(url, {
       headers: {
         Accept: "application/json",

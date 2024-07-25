@@ -1,11 +1,10 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 
 const schema = z.object({
   name: z.string().nonempty("Required"),
@@ -20,38 +19,44 @@ const ContactForm = () => {
     register,
     handleSubmit,
     formState: { errors, isValid, isDirty },
-    reset,
-  } = useForm({ resolver: zodResolver(schema) });
-  const form = useRef();
+  } = useForm({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+  const form = useRef<HTMLFormElement>(null);
 
-  const [isSending, setIsSending] = useState(false);
+  // const [isSending, setIsSending] = useState(false);
 
   const notifySuccess = () => toast.success("Message send");
   const notifyError = () =>
     toast.error("Failed to send message, please try again.");
 
   const onSubmit = async () => {
-    if (isSending) return; // Prevent multiple submissions
-    setIsSending(true);
+    // if (isSending) return; // Prevent multiple submissions
+    // setIsSending(true);
 
     try {
       await emailjs.sendForm(
         "service_lv0ohw8",
         "template_jkz0z7f",
-        form.current,
+        form.current!,
         {
           publicKey: "9dbeY18gXU1U0ji_B",
         }
       );
       notifySuccess();
       // maybe this is wrong
-      reset(); 
+      // reset();
     } catch (error) {
       console.error("Failed to send message", error);
       notifyError();
     } finally {
       // chane to counter
-      setIsSending(false);
+      // setIsSending(false);
     }
   };
 
@@ -73,7 +78,7 @@ const ContactForm = () => {
         {errors.message && (
           <div className="text-red-400">{errors.message.message}</div>
         )}
-        <button type="submit" disabled={isSending}>
+        <button type="submit" disabled={!isValid || !isDirty}>
           Send
         </button>
         <ToastContainer theme={"dark"} />

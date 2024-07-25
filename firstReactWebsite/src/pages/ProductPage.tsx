@@ -1,10 +1,21 @@
-import Button from "../components/Button.jsx";
+import Button from "../components/Button.js";
 import { useParams } from "react-router-dom";
-import products from "../data/products.jsx";
+import products from "../data/products.js";
+import { Product } from "../types/types";
 
-const ProductPage = ({ addPlant }) => {
-  const { id } = useParams();
-  const product = products.find((product) => product.id === parseInt(id));
+type ProductPageProps = {
+  addPlant: (product: Product) => void;
+}
+
+type Params = {
+  id: string;
+};
+
+const ProductPage = ({ addPlant }: ProductPageProps) => {
+  const { id } = useParams<Params>();
+  // i dont understand why this works here 
+  const productId =  id ? parseInt(id) : NaN;;
+  const product = products.find((product) => product.id === productId);
 
   if (!product) {
     return <div>Loading..</div>;

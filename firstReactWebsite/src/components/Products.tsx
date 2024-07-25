@@ -1,6 +1,12 @@
 import ProductCard from "./ProductCard";
+import { Product } from "../types/types";
 
-const Products = ({ products, addPlant }) => {
+type ProductsProps = {
+  products: Product[];
+   addPlant:(product: Product) => void;
+}
+
+const Products = ({ products, addPlant }: ProductsProps) => {
   return (
     <div className="products">
       {products.map((product) => {

@@ -1,4 +1,10 @@
-const TextContent = ({ title, paragraph }) => {
+
+type TextContentProps = {
+  title: string;
+  paragraph: string;
+}
+
+const TextContent = ({ title, paragraph }: TextContentProps) => {
   return (
     <div className="flex flex-col m-8">
       <h3 className="my-4 font-crimson uppercase text-[2rem] text-center">

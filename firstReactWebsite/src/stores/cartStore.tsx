@@ -1,17 +1,12 @@
 import { create } from "zustand";
-export type Plant = {
-  id: number;
-  name: string;
-  counter: number;
-  price: number;
-  img: string;
-};
+import { Product } from "../types/types";
+
 
 type CartState = {
-  cartProducts: Plant[];
-  addPlant: (product: Plant) => void;
-  removePlant: (product: Plant) => void;
-  decrementCounter: (product: Plant) => void;
+  cartProducts: Product[];
+  addPlant: (product: Product) => void;
+  removePlant: (product: Product) => void;
+  decrementCounter: (product: Product) => void;
 };
 const useCartStore = create<CartState>((set) => ({
   cartProducts: [],

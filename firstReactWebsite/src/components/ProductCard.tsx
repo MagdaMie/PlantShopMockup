@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import Button from "./Button";
+import { Product } from "../types/types";
 
-const ProductCard = ({ product, addPlant }) => {
+type ProductCardProps = {
+  product: Product;
+   addPlant:(product: Product) => void;
+}
+
+const ProductCard = ({ product, addPlant }: ProductCardProps) => {
   const buttonContent = "Add to the cart";
 
   return (

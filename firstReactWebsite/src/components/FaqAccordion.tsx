@@ -2,12 +2,13 @@ import AccordionElement from "./AccordionElement";
 import { useState } from "react";
 import faqs from "../data/faq";
 
+
+type openElementFunction= (id: number) => void;
+
 const FaqAccordion = () => {
-  
+  const [currentOpenedElements, setCurrentOpenedElements] = useState<number[]>([]);
 
-  const [currentOpenedElements, setCurrentOpenedElements] = useState([]);
-
-  const openElement = (id) => {
+  const openElement: openElementFunction = (id) => {
     setCurrentOpenedElements((prevCurrentOppnedElements) => {
       if (prevCurrentOppnedElements.includes(id)) {
         return prevCurrentOppnedElements.filter(
@@ -25,8 +26,8 @@ const FaqAccordion = () => {
         const isOpen = currentOpenedElements.includes(faq.id);
         return (
           <AccordionElement
-            title={faq.mainText}
-            text={faq.moreText}
+            question={faq.question}
+            anwser={faq.anwser}
             id={faq.id}
             key={faq.id}
             onClick={() => {

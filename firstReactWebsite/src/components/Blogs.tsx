@@ -16,11 +16,12 @@ const Blogs = () => {
 
   return (
     <div className="mx-8 my-[5rem] grid grid-cols-3 ">
-      {posts.map((post) => (
+      {posts?.map((post) => (
         <BlogCard
+          id={post.id}
           key={post.id}
           title={post.title}
-          body={post.body}
+          content={post.content}
           author={post.author}
           date={post.date}
           authorImg={post.authorImg}

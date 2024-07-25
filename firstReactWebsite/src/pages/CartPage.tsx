@@ -2,15 +2,15 @@ import Button from "../components/Button";
 import ShoppingCartElement from "../components/ShopingCratElement";
 import PriceCounter from "../components/PriceCounter";
 import { Link } from "react-router-dom";
-import { Plant } from "../stores/cartStore";
+import { Product } from "../types/types";
 
 type CartPageProps = {
-  cartProducts: Plant[];
+  cartProducts: Product[];
   totalPrice: number;
   shippingCost: number;
-  removePlant: (cartProduct: Plant) => void;
-  addPlant: (cartProduct: Plant) => void;
-  decrementCounter: (cartProduct: Plant) => void;
+  removePlant: (cartProduct: Product) => void;
+  addPlant: (cartProduct: Product) => void;
+  decrementCounter: (cartProduct: Product) => void;
 };
 
 const CartPage = ({

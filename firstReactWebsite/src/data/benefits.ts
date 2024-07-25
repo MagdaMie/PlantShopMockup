@@ -2,8 +2,9 @@ import { FaMoneyBillWave } from "react-icons/fa";
 import { MdReviews } from "react-icons/md";
 import { FaGift } from "react-icons/fa6";
 import { FaTruckArrowRight } from "react-icons/fa6";
+import { Benefit} from "../types/types"
 
-const benefits = [
+const benefits :Benefit[] = [
   {
     title: "Fast and Free Delivery",
     content: "Free delivery for all orders above $150",

@@ -1,4 +1,6 @@
-const products = [
+import { Product} from "../types/types"
+
+const products: Product[] = [
   { id: 1, name: "Monstera", price: 50, img: "/1.png", counter: 1 },
   { id: 2, name: "Snake Plant", price: 35, img: "/2.png", counter: 1 },
   { id: 3, name: "Fiddle Leaf Fig", price: 65, img: "/3.png", counter: 1 },
