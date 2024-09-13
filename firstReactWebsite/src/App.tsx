@@ -7,6 +7,7 @@ import { Product } from "./types/types";
 const Header = lazy(() => import("./pages/Header"));
 const ProductPage = lazy(() => import("./pages/ProductPage"));
 const Home = lazy(() => import("./pages/Home"));
+const ShopPage = lazy(() => import("./pages/ShopPage"));
 const Products = lazy(() => import("./components/Products"));
 const FaqPage = lazy(() => import("./pages/FaqPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
@@ -33,13 +34,20 @@ function App() {
         <Header numberOfCartProducts={numberOfCartProducts} />
       </Suspense>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={<div>Loading Home...</div>}>
+              <Home />
+            </Suspense>
+          }
+        />
 
         <Route
           path="/shop"
           element={
             <Suspense fallback={<div>Loading...</div>}>
-              <Products products={products} addPlant={addPlant} />
+              <ShopPage products={products} addPlant={addPlant} />
             </Suspense>
           }
         />

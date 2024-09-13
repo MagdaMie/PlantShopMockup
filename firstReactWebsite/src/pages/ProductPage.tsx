@@ -14,7 +14,7 @@ type Params = {
 const ProductPage = ({ addPlant }: ProductPageProps) => {
   const { id } = useParams<Params>();
   // i dont understand why this works here 
-  const productId =  id ? parseInt(id) : NaN;;
+  const productId =  id ? parseInt(id) : NaN;
   const product = products.find((product) => product.id === productId);
 
   if (!product) {

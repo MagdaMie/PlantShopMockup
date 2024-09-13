@@ -1,7 +1,7 @@
 
 type TextContentProps = {
   title: string;
-  paragraph: string;
+  paragraph?: string;
 }
 
 const TextContent = ({ title, paragraph }: TextContentProps) => {

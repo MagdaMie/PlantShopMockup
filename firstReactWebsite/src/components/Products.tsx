@@ -3,8 +3,8 @@ import { Product } from "../types/types";
 
 type ProductsProps = {
   products: Product[];
-   addPlant:(product: Product) => void;
-}
+  addPlant: (product: Product) => void;
+};
 
 const Products = ({ products, addPlant }: ProductsProps) => {
   return (
