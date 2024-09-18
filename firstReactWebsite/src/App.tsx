@@ -8,14 +8,13 @@ const Header = lazy(() => import("./pages/Header"));
 const ProductPage = lazy(() => import("./pages/ProductPage"));
 const Home = lazy(() => import("./pages/Home"));
 const ShopPage = lazy(() => import("./pages/ShopPage"));
-const Products = lazy(() => import("./components/Products"));
 const FaqPage = lazy(() => import("./pages/FaqPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const CartPage = lazy(() => import("./pages/CartPage"));
 const Footer = lazy(() => import("./pages/Footer"));
 
 function App() {
-  const { cartProducts, addPlant, removePlant, decrementCounter } =
+  const { cartProducts, addPlant, removePlant, decrementCounter, modalMessage } =
     useCartStore();
 
   let numberOfCartProducts = 0;
@@ -47,7 +46,7 @@ function App() {
           path="/shop"
           element={
             <Suspense fallback={<div>Loading...</div>}>
-              <ShopPage products={products} addPlant={addPlant} />
+              <ShopPage products={products} addPlant={addPlant} modalMessage={modalMessage} />
             </Suspense>
           }
         />
@@ -74,7 +73,7 @@ function App() {
           path="/product/:id"
           element={
             <Suspense fallback={<div>Loading...</div>}>
-              <ProductPage addPlant={addPlant} />
+              <ProductPage addPlant={addPlant} modalMessage={modalMessage} />
             </Suspense>
           }
         />

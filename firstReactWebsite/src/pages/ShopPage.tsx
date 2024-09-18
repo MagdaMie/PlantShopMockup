@@ -3,13 +3,15 @@ import { Product } from "../types/types";
 import Products from "../components/Products";
 import TextContent from "../components/TextContent";
 import SortingOptions from "../components/SortingOptions";
+import Modal from "../components/Modal"
 
 type ShopPageProps = {
   products: Product[];
   addPlant: (product: Product) => void;
+  modalMessage: string|null;
 };
 
-const ShopPage = ({ products, addPlant }: ShopPageProps) => {
+const ShopPage = ({ products, addPlant, modalMessage }: ShopPageProps) => {
   const [sortMethod, setSortMethod] = useState<string>("default");
 
   const sortedProducts = products.sort((a, b) => {
@@ -29,6 +31,7 @@ const ShopPage = ({ products, addPlant }: ShopPageProps) => {
       <TextContent title={"Our Plants"} />
       <SortingOptions sortMethod={sortMethod} setSortMethod={setSortMethod}/>
       <Products products={sortedProducts} addPlant={addPlant} />
+    <Modal message={modalMessage}/>
     </>
   );
 };

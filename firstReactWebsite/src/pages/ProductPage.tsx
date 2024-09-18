@@ -2,16 +2,18 @@ import Button from "../components/Button.js";
 import { useParams } from "react-router-dom";
 import products from "../data/products.js";
 import { Product } from "../types/types";
+import Modal from "../components/Modal.js";
 
 type ProductPageProps = {
   addPlant: (product: Product) => void;
+  modalMessage: string | null
 }
 
 type Params = {
   id: string;
 };
 
-const ProductPage = ({ addPlant }: ProductPageProps) => {
+const ProductPage = ({ addPlant, modalMessage }: ProductPageProps) => {
   const { id } = useParams<Params>();
   // i dont understand why this works here 
   const productId =  id ? parseInt(id) : NaN;
@@ -68,7 +70,9 @@ const ProductPage = ({ addPlant }: ProductPageProps) => {
           <div></div>
         </div>
       </div>
+      <Modal message={modalMessage}/>
     </div>
+
   );
 };
 
