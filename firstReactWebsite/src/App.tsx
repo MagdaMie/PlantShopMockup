@@ -14,8 +14,11 @@ const CartPage = lazy(() => import("./pages/CartPage"));
 const Footer = lazy(() => import("./pages/Footer"));
 
 function App() {
-  const { cartProducts, addPlant, removePlant, decrementCounter, modalMessage } =
-    useCartStore();
+  const cartProducts = useCartStore((state) => state.cartProducts);
+  const addPlant = useCartStore((state) => state.addPlant);
+  const removePlant = useCartStore((state) => state.removePlant);
+  const decrementCounter = useCartStore((state) => state.decrementCounter);
+  const modalMessage = useCartStore((state) => state.modalMessage);
 
   let numberOfCartProducts = 0;
   let totalPrice = 0;
@@ -46,7 +49,11 @@ function App() {
           path="/shop"
           element={
             <Suspense fallback={<div>Loading...</div>}>
-              <ShopPage products={products} addPlant={addPlant} modalMessage={modalMessage} />
+              <ShopPage
+                products={products}
+                addPlant={addPlant}
+                modalMessage={modalMessage}
+              />
             </Suspense>
           }
         />
