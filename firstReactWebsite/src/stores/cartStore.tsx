@@ -1,36 +1,34 @@
 import { create } from "zustand";
 import { Product } from "../types/types";
-
+import useNotificationStore from "./notoficationStore";
 
 type CartState = {
   cartProducts: Product[];
-  modalMessage: string | null;
+
   addPlant: (product: Product) => void;
   removePlant: (product: Product) => void;
   decrementCounter: (product: Product) => void;
-  closeModal: () => void;
 };
 const useCartStore = create<CartState>((set) => ({
   cartProducts: [],
-  modalMessage: null,
+
   addPlant: (product) =>
     set((prevState) => {
-      if (prevState.cartProducts.some((plant) => plant.id === product.id)) {
-        const newCartProducts = prevState.cartProducts.map((cartProduct) => {
-          if (cartProduct.id === product.id) {
-            return { ...cartProduct, counter: cartProduct.counter + 1 };
-          } else {
+      const { setNotification } = useNotificationStore.getState();
+
+      const newCartProducts = prevState.cartProducts.some(
+        (plant) => plant.id === product.id
+      )
+        ? prevState.cartProducts.map((cartProduct) => {
+            if (cartProduct.id === product.id) {
+              return { ...cartProduct, counter: cartProduct.counter + 1 };
+            }
             return cartProduct;
-          }
-        });
-        return { cartProducts: newCartProducts,
-          modalMessage: `Added ${product.name} to the cart`
-         };
-      } else {
-        return { cartProducts: [...prevState.cartProducts, product],
-          modalMessage:`Added ${product.name} to the cart`
-         };
-      }
+          })
+        : [...prevState.cartProducts, product];
+
+      setNotification(`${product.name} has been added to the cart!`);
+      return { cartProducts: newCartProducts };
     }),
   removePlant: (product) =>
     set((prevState) => {
@@ -55,7 +53,6 @@ const useCartStore = create<CartState>((set) => ({
         return prevState;
       }
     }),
-    closeModal: () => set({modalMessage: null})
 }));
 
 export default useCartStore;

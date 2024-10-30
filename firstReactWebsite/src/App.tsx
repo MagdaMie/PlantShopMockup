@@ -18,7 +18,7 @@ function App() {
   const addPlant = useCartStore((state) => state.addPlant);
   const removePlant = useCartStore((state) => state.removePlant);
   const decrementCounter = useCartStore((state) => state.decrementCounter);
-  const modalMessage = useCartStore((state) => state.modalMessage);
+
 
   let numberOfCartProducts = 0;
   let totalPrice = 0;
@@ -52,7 +52,7 @@ function App() {
               <ShopPage
                 products={products}
                 addPlant={addPlant}
-                modalMessage={modalMessage}
+            
               />
             </Suspense>
           }
@@ -80,7 +80,7 @@ function App() {
           path="/product/:id"
           element={
             <Suspense fallback={<div>Loading...</div>}>
-              <ProductPage addPlant={addPlant} modalMessage={modalMessage} />
+              <ProductPage addPlant={addPlant}  />
             </Suspense>
           }
         />

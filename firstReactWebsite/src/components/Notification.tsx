@@ -1,16 +1,16 @@
-import useCartStore from "../stores/cartStore";
-import { useEffect, useState } from "react";
 
-type ModalProps = {
-  message: null | string;
-};
-const Modal = ({ message }: ModalProps) => {
-  const { closeModal } = useCartStore();
+import { useEffect, useState } from "react";
+import useNotificationStore from "../stores/notoficationStore";
+
+
+const Notification = () => {
+  const {notification} = useNotificationStore((state) => ({notification: state.notification}))
+  const {clearNotification} = useNotificationStore((state)=> ({clearNotification: state.clearNotification})) 
 
   const[timeLeft, setTimeLeft] = useState(100)
 
 useEffect ( () => {
-if(message) {
+if(notification) {
    const timerInterval = 20;
    const totalDuration = 2000;
    let timeElapsed = 0
@@ -22,19 +22,20 @@ if(message) {
 
     if (timeElapsed >= totalDuration){
         clearInterval(interval);
-        closeModal();
+        clearNotification();
+
     }
    }, timerInterval);
    
    return()=> clearInterval(interval)
 }
-}, [message])
+}, [notification])
 
-  if (!message) return null;
+  if (!notification) return null;
   return (
     <div className="modal">
-      <button onClick={closeModal}>x</button>
-      <h3 className="modal-content">{message}</h3>
+      <button >x</button>
+      <h3 className="modal-content">{notification}</h3>
       <div
           className="progress-bar"
           style={{
@@ -48,4 +49,4 @@ if(message) {
   );
 };
 
-export default Modal;
+export default Notification;
