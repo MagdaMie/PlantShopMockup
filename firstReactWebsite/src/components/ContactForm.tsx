@@ -3,13 +3,14 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import useNotificationStore from "../stores/notoficationStore";
+import Notification from "./Notification";
+
 
 const schema = z.object({
-  name: z.string().nonempty("Required"),
-  email: z.string().email(),
-  message: z.string().nonempty("Required"),
+  name: z.string().nonempty({ message: "Name is required" }),
+  email: z.string().email({ message: "Invalid email format" }),
+  message: z.string().nonempty({ message: "Message is required" }),
 });
 
 // with hookform and zod
@@ -18,9 +19,12 @@ const ContactForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid, isDirty },
+    formState: { errors, isSubmitting },
+    reset,
   } = useForm({
     resolver: zodResolver(schema),
+
+ 
     defaultValues: {
       name: "",
       email: "",
@@ -28,36 +32,25 @@ const ContactForm = () => {
     },
   });
   const form = useRef<HTMLFormElement>(null);
-
-  // const [isSending, setIsSending] = useState(false);
-
-  const notifySuccess = () => toast.success("Message send");
-  const notifyError = () =>
-    toast.error("Failed to send message, please try again.");
+  const setNotification = useNotificationStore(
+    (state) => state.setNotification
+  );
 
   const onSubmit = async () => {
-    // if (isSending) return; // Prevent multiple submissions
-    // setIsSending(true);
-
     try {
       await emailjs.sendForm(
         "service_lv0ohw8",
         "template_jkz0z7f",
         form.current!,
-        {
-          publicKey: "9dbeY18gXU1U0ji_B",
-        }
+        { publicKey: "9dbeY18gXU1U0ji_B" }
       );
-      notifySuccess();
-      // maybe this is wrong
-      // reset();
+
+      setNotification("Message send suesfully!");
+      reset();
     } catch (error) {
       console.error("Failed to send message", error);
-      notifyError();
-    } finally {
-      // chane to counter
-      // setIsSending(false);
-    }
+      setNotification("Failed to send message, please try again.");
+    } 
   };
 
   return (
@@ -78,11 +71,12 @@ const ContactForm = () => {
         {errors.message && (
           <div className="text-red-400">{errors.message.message}</div>
         )}
-        <button type="submit" disabled={!isValid || !isDirty}>
-          Send
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Sending..." : "Send"}
         </button>
-        <ToastContainer theme={"dark"} />
       </form>
+
+      <Notification />
     </div>
   );
 };
