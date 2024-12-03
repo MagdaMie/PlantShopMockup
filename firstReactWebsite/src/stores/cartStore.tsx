@@ -21,6 +21,7 @@ const useCartStore = create<CartState>((set) => ({
       )
         ? prevState.cartProducts.map((cartProduct) => {
             if (cartProduct.id === product.id) {
+              
               return { ...cartProduct, counter: cartProduct.counter + 1 };
             }
             return cartProduct;

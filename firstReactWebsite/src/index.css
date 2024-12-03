@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Oxygen&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&family=Oxygen&display=swap");
 
 :root {
   font-family: "Crimson Text", serif;
@@ -132,8 +132,6 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
-
 
 /* Product page */
 
@@ -308,21 +306,47 @@ body {
   margin-bottom: 7px;
 }
 
+/* Notification */
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background-color: white;
-  color: black;
-  padding: 2rem;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  max-height: 100px;
+  padding: 10px;
+  background-color: #333;
+  color: white;
   z-index: 1000;
+  opacity: 0.9;
+}
+.modal-content {
+  margin: 0;
+  font-size: 14px;
+
+  color: white;
+  height: 100%;
+  width: 100%;
 }
 
+
+.notification-container {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  /* justify-content: flex-start; */
+}
+.progress-bar-container {
+  width: 100%;
+  height: 5px;
+  background-color: #555;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 20ms linear;
+}
