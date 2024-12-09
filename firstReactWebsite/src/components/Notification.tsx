@@ -5,7 +5,7 @@ import useNotificationStore from "../stores/notoficationStore";
 const Notification = () => {
   const { notification, id } = useNotificationStore((state) => ({
     notification: state.notification,
-    id: state.id
+    id: state.id,
   }));
   const { clearNotification } = useNotificationStore((state) => ({
     clearNotification: state.clearNotification,
@@ -38,13 +38,18 @@ const Notification = () => {
   const portalTarget = document.getElementById("notification-root");
   if (!portalTarget) return null;
   return ReactDOM.createPortal(
-    <div key={id} className="modal">
-    
-      <div className="notification-container">
-        
-        <div className="modal-content"><h3 >{notification}</h3></div>
-        <div className="progress-bar-container">
-          <div className="progress-bar" style={{ width: `${timeLeft}%` }} />
+    <div
+      key={id}
+      className="fixed top-[85px] right-[20px] w-[300px] max-h-[100px]  rounded-lg bg-[#333] text-white z-50 opacity-90"
+    >
+      <div className="flex flex-col gap-3 m-3">
+        <h3 className="text-xs">{notification}</h3>
+
+        <div className="w-full h-1.5 bg-[#333] ">
+          <div
+            className="h-full bg-customGreen-default transition-all duration-[20ms] ease-linear rounded-md"
+            style={{ width: `${timeLeft}%` }}
+          />
         </div>
       </div>
     </div>,

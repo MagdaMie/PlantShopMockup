@@ -46,7 +46,7 @@ const CartPage = ({
           shippingCost={shippingCost}
         />
         <Link to={"/shop"}>
-          <Button content={"continue shopping"} />
+          <Button content={"Continue shopping"} />
         </Link>
       </div>
     </div>
