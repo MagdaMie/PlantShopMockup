@@ -29,7 +29,7 @@ const ShopPage = ({ products, addPlant }: ShopPageProps) => {
       <TextContent title={"Our Plants"} />
       <SortingOptions sortMethod={sortMethod} setSortMethod={setSortMethod} />
       <Products products={sortedProducts} addPlant={addPlant} />
-      <Notification/>
+      <Notification />
     </>
   );
 };

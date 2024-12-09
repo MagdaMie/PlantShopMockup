@@ -8,7 +8,7 @@ type ProductsProps = {
 
 const Products = ({ products, addPlant }: ProductsProps) => {
   return (
-    <div className="products">
+    <div className="flex flex-wrap justify-center">
       {products.map((product) => {
         return (
           <ProductCard product={product} key={product.id} addPlant={addPlant} />

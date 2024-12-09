@@ -34,58 +34,6 @@ body {
 }
 
 /* Shop */
-.products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.product-card {
-  margin: 20px;
-}
-
-.product-card .img-wrap {
-  width: 250px;
-  height: 350px;
-  position: relative;
-}
-.product-card .img-wrap img {
-  width: 250px;
-  height: auto;
-  position: absolute;
-  bottom: -10%;
-  left: -15%;
-}
-
-.product-card .img-wrap img:hover {
-  transform: scale(1.1);
-}
-
-.product-details {
-  border: 2px solid #45624e;
-  padding: 50px 20px 20px;
-  border-radius: 15px;
-}
-
-.product-details .wrap {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.product-details .button-wrap {
-  margin: 10px 0;
-  text-align: center;
-}
-
-.product-price {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.product-name {
-  font-weight: bold;
-}
 
 /* FAQ */
 .faq-accordion {
