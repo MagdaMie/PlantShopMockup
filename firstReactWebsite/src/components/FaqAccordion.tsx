@@ -2,11 +2,12 @@ import AccordionElement from "./AccordionElement";
 import { useState } from "react";
 import faqs from "../data/faq";
 
-
-type openElementFunction= (id: number) => void;
+type openElementFunction = (id: number) => void;
 
 const FaqAccordion = () => {
-  const [currentOpenedElements, setCurrentOpenedElements] = useState<number[]>([]);
+  const [currentOpenedElements, setCurrentOpenedElements] = useState<number[]>(
+    []
+  );
 
   const openElement: openElementFunction = (id) => {
     setCurrentOpenedElements((prevCurrentOppnedElements) => {
@@ -21,7 +22,7 @@ const FaqAccordion = () => {
   };
 
   return (
-    <div className="faq-accordion">
+    <div className="mt-[-140px]">
       {faqs.map((faq) => {
         const isOpen = currentOpenedElements.includes(faq.id);
         return (

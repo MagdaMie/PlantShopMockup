@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text&family=Oxygen&display=swap");
 
 :root {
+  height: 100%;
   font-family: "Crimson Text", serif;
   line-height: 1.5;
   font-weight: 400;
@@ -33,53 +34,39 @@ body {
   background-color: #242424;
 }
 
-/* Shop */
+
+.input-field {
+  @apply p-2 text-sm font-oxygen rounded-sm bg-[#242424] m-3 w-[300px] rounded-md;
+}
+.error-text {
+  @apply text-red-300 font-oxygen text-sm;
+}
+
 
 /* FAQ */
-.faq-accordion {
-  margin-top: -100px;
-}
 
-.faq {
-  width: 70%;
-  margin: 20px auto;
-}
 
-.faq .question {
+/* .question {
   display: flex;
   justify-content: space-between;
   border: 1px solid white;
   padding: 15px;
 }
 
-.faq .anwser {
+ .anwser {
   background-color: #c0cfb2;
   color: #242424;
   padding: 25px;
   margin-top: 10px;
-}
+} */
 
-.faq .question p,
-.faq .anwser p {
-  font-size: 1.25rem;
-}
 
 .question-btn {
   font-weight: bold;
   margin: 0 15px;
 }
 
-.baner-bg {
-  width: 100%;
-  height: 450px;
-  background-image: url(/FAQbaner.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 /* Product page */
 
@@ -155,52 +142,10 @@ body {
   margin-bottom: 8px;
 }
 
-/* contact page */
 
-.contact-page {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-  height: 100vh;
-}
 
-.contact-page-left {
-  background-image: url(/siteBaner.png);
-  background-size: 60%;
-  background-repeat: no-repeat;
-  position: relative;
-}
 
-.contact-page-left h3 {
-  font-size: 4rem;
-  text-transform: lowercase;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-}
 
-.contact-page-left h3 span {
-  display: block;
-  line-height: 4.5rem;
-}
-
-.contact-page-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--dark-green);
-}
-
-.contact-page-right form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-page-right form input,
-.contactpage-right form textarea {
-  margin: 20px 0;
-  padding: 10px 30px;
-}
 
 /* shopping cart */
 .cart-page {
@@ -254,42 +199,3 @@ body {
   margin-bottom: 7px;
 }
 
-/* Notification */
-/* .modal {
-
-  padding: 10px;
-  background-color: #333;
-  color: white;
-  z-index: 1000;
-  opacity: 0.9;
-} */
-/* .modal-content {
-  margin: 0; 
-  font-size: 14px;
-
-  color: white;
-   height: 100%;
-  width: 100%;
-} */
-
-
-/* .notification-container {
-  margin: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-} */
-/* .progress-bar-container {
-  width: 100%;
-  height: 5px;
-  background-color: #555;
-  border-radius: 4px;
-
-} */
-
-/* .progress-bar {
-
-  background-color: #4caf50;
-  transition: width 20ms linear;
-} */

@@ -1,25 +1,32 @@
-import { Question} from "../types/types";
-import { CSSProperties } from 'react';
+import { Question } from "../types/types";
+import { CSSProperties } from "react";
 
 type AccordionElementProps = Question & {
-style: CSSProperties;
-isOpen: boolean;
-onClick: React.MouseEventHandler<HTMLDivElement> ;
-}
+  style: CSSProperties;
+  isOpen: boolean;
+  onClick: React.MouseEventHandler<HTMLDivElement>;
+};
 
-const AccordionElement = ({ question, anwser, onClick, style, isOpen }: AccordionElementProps) => {
+const AccordionElement = ({
+  question,
+  anwser,
+  onClick,
+  style,
+  isOpen,
+}: AccordionElementProps) => {
   return (
-    <div className="faq">
-      <div className="question" onClick={onClick}>
-        <div className="question-wrap">
-          <p>{question}</p>
-        </div>
-        <button className="question-btn" style={style}>
-          {"V"}
+    <div className="my-4  mx-auto w-4/6 ">
+      <div
+        className="p-6 flex justify-between border border-white rounded-md "
+        onClick={onClick}
+      >
+        <p className="font-crimson">{question}</p>
+        <button className="font-oxygen" style={style}>
+          {isOpen? "x" : "v"}
         </button>
       </div>
       {isOpen && (
-        <div className="anwser">
+        <div className="mt-3 p-6 bg-customGreen-light text-[#242424] font-crimson rounded-md">
           <p>{anwser}</p>
         </div>
       )}

@@ -4,8 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import emailjs from "@emailjs/browser";
 import useNotificationStore from "../stores/notoficationStore";
-import Notification from "./Notification";
-
+import Button from "./Button";
 
 const schema = z.object({
   name: z.string().nonempty({ message: "Name is required" }),
@@ -24,7 +23,6 @@ const ContactForm = () => {
   } = useForm({
     resolver: zodResolver(schema),
 
- 
     defaultValues: {
       name: "",
       email: "",
@@ -50,34 +48,53 @@ const ContactForm = () => {
     } catch (error) {
       console.error("Failed to send message", error);
       setNotification("Failed to send message, please try again.");
-    } 
+    }
   };
 
   return (
-    <div>
-      <form ref={form} onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" {...register("name")} placeholder="name" />
-        {errors.name && (
-          <div className="text-red-400">{errors.name.message}</div>
-        )}
-        <input type="text" {...register("email")} placeholder="Email" />
-        {errors.email && (
-          <div className="text-red-400">{errors.email.message}</div>
-        )}
-        <textarea
-          {...register("message")}
-          placeholder="Enter your message..."
-        ></textarea>
-        {errors.message && (
-          <div className="text-red-400">{errors.message.message}</div>
-        )}
-        <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Sending..." : "Send"}
-        </button>
-      </form>
-
-      <Notification />
-    </div>
+    <form
+      ref={form}
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col justify-center items-center "
+    >
+      <input
+        type="text"
+        {...register("name")}
+        placeholder="name"
+        className="input-field"
+      />
+      {errors.name && (
+        <div className="error-text">
+          {errors.name.message}
+        </div>
+      )}
+      <input
+        type="text"
+        {...register("email")}
+        placeholder="e-mail"
+        className="input-field"
+      />
+      {errors.email && (
+        <div className="error-text">
+          {errors.email.message}
+        </div>
+      )}
+      <textarea
+        {...register("message")}
+        placeholder="your message..."
+        className="input-field h-[200px]"
+      ></textarea>
+      {errors.message && (
+        <div className="error-text">
+          {errors.message.message}
+        </div>
+      )}
+      <Button
+        type="submit"
+        content={isSubmitting ? "Submitting..." : "Submit"}
+        disable={isSubmitting}
+      ></Button>
+    </form>
   );
 };
 

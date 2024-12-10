@@ -40,7 +40,7 @@ const Notification = () => {
   return ReactDOM.createPortal(
     <div
       key={id}
-      className="fixed top-[85px] right-[20px] w-[300px] max-h-[100px]  rounded-lg bg-[#333] text-white z-50 opacity-90"
+      className="fixed top-[85px] right-[20px] w-[300px] max-h-[100px] rounded-lg bg-[#333] text-white z-50 opacity-90"
     >
       <div className="flex flex-col gap-3 m-3">
         <h3 className="text-xs">{notification}</h3>
