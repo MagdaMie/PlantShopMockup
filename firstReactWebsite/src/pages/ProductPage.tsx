@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import products from "../data/products.js";
 import { Product } from "../types/types";
 import Notification from "../components/Notification.js";
+import ProductDescription from "./ProductDescription.js";
 
 type ProductPageProps = {
   addPlant: (product: Product) => void;
@@ -25,49 +26,9 @@ const ProductPage = ({ addPlant }: ProductPageProps) => {
       <div className="product-display">
         <img src={product.img} alt="" />
       </div>
-      <div className="product-description">
-        <div className="wrap">
-          <h3>{product.name}</h3>
-          <p className="price">${product.price}</p>
-          <p className="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-            consectetur eaque dolores, quisquam inventore debitis fugiat! Libero
-            natus dolorum fugit, odio ipsum harum aperiam, dicta et facilis
-            omnis sunt deserunt, assumenda cumque ad sint voluptatem eius
-            excepturi quis labore ipsam repellendus perferendis sed delectus!
-            Nisi quibusdam odit nostrum nam sapiente velit? Blanditiis
-            consequuntur earum perspiciatis illo aut{" "}
-          </p>
-
-          <div className="product-care">
-            <ul>
-              <li>
-                <img src="/icon5.png" alt="" />
-                <p>Lorem, ipsum</p>
-              </li>
-              <li>
-                <img src="/icon5.png" alt="" />
-                <p>Lorem, ipsum</p>
-              </li>
-              <li>
-                <img src="/icon5.png" alt="" />
-                <p>Lorem, ipsum</p>
-              </li>
-              <li>
-                <img src="/icon5.png" alt="" />
-                <p>Lorem, ipsum</p>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <Button
-              content={"Add to the cart"}
-              onClick={() => addPlant(product)}
-            />
-          </div>
-          <div></div>
-        </div>
-      </div>
+      <ProductDescription
+      product={product}
+      addPlant={addPlant}/>
       <Notification />
     </div>
   );
