@@ -1,28 +1,24 @@
-
-
 const ProductCare = () => {
-    return(
-        <div className="product-care">
-        <ul>
-          <li>
-            <img src="/icon5.png" alt="" />
-            <p>Lorem, ipsum</p>
-          </li>
-          <li>
-            <img src="/icon5.png" alt="" />
-            <p>Lorem, ipsum</p>
-          </li>
-          <li>
-            <img src="/icon5.png" alt="" />
-            <p>Lorem, ipsum</p>
-          </li>
-          <li>
-            <img src="/icon5.png" alt="" />
-            <p>Lorem, ipsum</p>
-          </li>
-        </ul>
+  return (
+    <div className="flex justify-around mt-8 ">
+      <div className="care-item">
+        <img src="/icon5.png" alt="icon" className="care-item-img" />
+        <p>Lorem, ipsum</p>
       </div>
-    )
-}
+      <div className="care-item">
+        <img src="/icon5.png" alt="icon" className="care-item-img" />
+        <p>Lorem, ipsum</p>
+      </div>
+      <div className="care-item">
+        <img src="/icon5.png" alt="icon" className="care-item-img" />
+        <p>Lorem, ipsum</p>
+      </div>
+      <div className="care-item">
+        <img src="/icon5.png" alt="icon" className="care-item-img" />
+        <p>Lorem, ipsum</p>
+      </div>
+    </div>
+  );
+};
 
-export default ProductCare
+export default ProductCare;
