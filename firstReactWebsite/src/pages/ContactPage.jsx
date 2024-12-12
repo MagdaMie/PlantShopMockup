@@ -11,7 +11,7 @@ const ContactPage = () => {
         <h3> touch</h3>
       </div>
 
-      <div className="flex flex-1 flex-col justify-center items-center bg-customGreen-very-dark ">
+      <div className="flex flex-1 flex-col justify-center items-center bg-customGreen-dark bg-opacity-40 ">
         <ContactForm />
       </div>
       <Notification />
