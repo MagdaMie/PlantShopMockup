@@ -22,7 +22,7 @@ const FaqAccordion = () => {
   };
 
   return (
-    <div className="mt-[-140px]">
+    <div className="mt-[-60px]">
       {faqs.map((faq) => {
         const isOpen = currentOpenedElements.includes(faq.id);
         return (

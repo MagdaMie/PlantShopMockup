@@ -1,14 +1,19 @@
 import Button from "./Button";
 import useSWRMutation from "swr/mutation";
 import { Product } from "../types/types";
+import { Link } from "react-router-dom";
 
-type PriceCounterProps ={
+type PriceCounterProps = {
   cartProducts: Product[];
-   totalPrice:number;
-    shippingCost:number;
-}
+  totalPrice: number;
+  shippingCost: number;
+};
 
-const PriceCounter = ({ cartProducts, totalPrice, shippingCost }: PriceCounterProps) => {
+const PriceCounter = ({
+  cartProducts,
+  totalPrice,
+  shippingCost,
+}: PriceCounterProps) => {
   const products = cartProducts;
 
   const fetchPayment = async (url: string) => {
@@ -42,24 +47,42 @@ const PriceCounter = ({ cartProducts, totalPrice, shippingCost }: PriceCounterPr
 
   return (
     totalPrice !== 0 && (
-      <div className="price-counter">
-        <div className="subtotal">
-          <p>Subtotal</p>
-          <p>${totalPrice}</p>
+      <div>
+        <div className="h-[300px] w-[400px] p-6 bg-customGreen-dark bg-opacity-40 rounded-lg">
+          {/* summary */}
+          <h3 className="text-3xl pb-4">Order summary</h3>
+          <div className="flex flex-col gap-4 text-lg">
+            <div className="text-sm mb-2">
+              {/* subtotal */}
+              <div className="flex  justify-between mb-2 ">
+                <p>Subtotal</p>
+                <p>${totalPrice}</p>
+              </div>
+              {/* shipping */}
+              <div className="flex justify-between">
+                <p>Shipping</p>
+                <p>${shippingCost}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* total */}
+          <div className="pt-4  flex justify-between font-bold uppercase border-t-2 border-t-[#242424]">
+            <p>Total</p>
+            <p>${totalPrice + shippingCost}</p>
+          </div>
+          <div className="mt-3 flex justify-around items-center">
+            <Button
+              content={"Checkout"}
+              onClick={handlePayment}
+              disable={isMutating}
+            />
+            <Link to={"/shop"}>
+              <Button content={"Continue shopping"} />
+            </Link>
+          </div>
         </div>
-        <div className="shipping">
-          <p>Shipping</p>
-          <p>${shippingCost}</p>
-        </div>
-        <div className="total">
-          <p>Total</p>
-          <p>${totalPrice + shippingCost}</p>
-        </div>
-        <Button
-          content={"Checkout"}
-          onClick={handlePayment}
-          disable={isMutating}
-        />
+        {/* buttons */}
       </div>
     )
   );

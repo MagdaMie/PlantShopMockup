@@ -1,0 +1,60 @@
+<div className="">
+    <div className="">
+      <h3>Your Cart</h3>
+      {cartProducts.length === 0 && (
+        <div>
+          <p>your cart is empty</p>{" "}
+          <Link to="/shop">
+            <btn content="Continue shopping" > </btn>
+          </Link>
+        </div>
+      )}
+    </div>
+    <div className="flex ">
+      <div className="flex-2 flex flex-col items-center w-full">
+        <div className="flex justify-between items-center">
+            <div className="flex">
+              <img src={cartProduct.cartImg} alt="plant's picure" className="h-[140px] w-[100px]" />
+              <p>{cartProduct.name}</p>
+            </div>
+            <div className="flex">
+              <p onClick="decrementCountercartProduct" className="cursor-pointer">-</p>
+              <p>{cartProduct.counter}</p>
+              <p onClick="addPlant(cartProduct) "className="cursor-pointer">+</p>
+            </div>
+            <div className="flex">
+              <p>${cartProduct.price * cartProduct.counter}</p>
+            </div>
+            <div className="remove">
+              <p onClick="removePlant(cartProduct)" className="cursor-pointer">x</p>
+            </div>
+          </div>
+      </div>
+
+      <div className="flex-1 flex flex-col items-center">
+        <div className="">
+            <h3>Order summary</h3>
+            <div className="flex">
+              <p>Subtotal</p>
+              <p>${totalPrice}</p>
+            </div>
+            <div className="flex">
+              <p>Shipping</p>
+              <p>${shippingCost}</p>
+            </div>
+            <div className="flex">
+              <p>Total</p>
+              <p>${totalPrice + shippingCost}</p>
+            </div>
+            <Button
+            
+              onClick={handlePayment}
+              disable={isMutating}
+            ></Button>
+             <Link to="/shop">
+              <Button content="Continue shopping" ></Button>
+            </Link>
+          </div>
+      </div>
+    </div>
+  </div>

@@ -36,35 +36,13 @@ body {
 
 
 .input-field {
-  @apply p-2 text-sm font-oxygen rounded-sm bg-[#242424] m-3 w-[300px] rounded-md;
+  @apply p-2 text-sm font-oxygen bg-[#242424] m-3 w-[300px] rounded-md;
 }
 .error-text {
   @apply text-red-300 font-oxygen text-sm;
 }
 
 
-/* FAQ */
-
-
-/* .question {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid white;
-  padding: 15px;
-}
-
- .anwser {
-  background-color: #c0cfb2;
-  color: #242424;
-  padding: 25px;
-  margin-top: 10px;
-} */
-
-
-.question-btn {
-  font-weight: bold;
-  margin: 0 15px;
-}
 
 
 
@@ -85,7 +63,7 @@ body {
 .product-display img {
   position: absolute;
   bottom: 8%;
-  left: 40%;
+  left: 50%;
   height: 75vh;
   width: auto;
 }
@@ -147,55 +125,4 @@ body {
 
 
 
-/* shopping cart */
-.cart-page {
-  min-height: 62vh;
-}
-.cart-page-content {
-  width: 70vw;
-  margin: 0 auto;
-}
-
-.cart-page-content h3 {
-  margin: 25px;
-}
-
-.cart-page-content .title p {
-  margin: 30px 25px;
-}
-
-/* shopping cart element */
-.shopping-cart-element {
-  display: flex;
-  margin-top: 10px;
-}
-
-.shopping-cart-element .product,
-.shopping-cart-element .quantity,
-.shopping-cart-element .price,
-.shopping-cart-element .remove {
-  display: flex;
-  align-items: center;
-  margin-right: 50px;
-}
-
-.shopping-cart-element .quantity p:not(:last-child) {
-  display: flex;
-  margin-right: 10px;
-}
-
-.shopping-cart-element .product img {
-  height: 150px;
-}
-
-/* Price counter */
-.price-counter {
-  margin: 10px;
-}
-
-.price-counter > * {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 7px;
-}
 

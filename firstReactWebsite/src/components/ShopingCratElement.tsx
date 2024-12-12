@@ -15,22 +15,29 @@ const ShoppingCartElement = ({
   decrementCounter,
 }: ShoppingCartElementProps) => {
   return (
-    <div className="shopping-cart-element">
-      <div className="product">
-        <img src={cartProduct.img} alt="" />
-        <p>{cartProduct.name}</p>
+    <div className="flex justify-between items-center">
+      {/* plant */}
+      <div className="flex items-center mr-6 ">
+        <img src={cartProduct.cartImg} alt="plant's picure" className="h-[140px] w-[100px] mr-6" />
+        <p className="w-[130px]">{cartProduct.name}</p>
       </div>
-      <div className="quantity">
-        <p onClick={() => decrementCounter(cartProduct)}>-</p>
+      <div className="flex gap-12 w-[400px]">
+         {/* quantity +/- */}
+      <div className=" flex justify-center items-center rounded-xl w-[100px] h-[40px] bg-customGreen-dark bg-opacity-40">
+        <p onClick={() => decrementCounter(cartProduct)} className="cursor-pointer px-3 ">-</p>
         <p>{cartProduct.counter}</p>
-        <p onClick={() => addPlant(cartProduct)}>+</p>
+        <p onClick={() => addPlant(cartProduct)} className="cursor-pointer px-3 ">+</p>
       </div>
-      <div className="price">
+      {/* price */}
+      <div className="flex items-center">
         <p>${cartProduct.price * cartProduct.counter}</p>
       </div>
-      <div className="remove">
-        <p onClick={() => removePlant(cartProduct)}>x</p>
+      {/* remove */}
+      <div className="flex justify-center items-center h-[40px] w-[40px] rounded-2xl  font-oxygen  bg-customGreen-dark bg-opacity-40">
+        <p onClick={() => removePlant(cartProduct)} className="px-3 cursor-pointer font-thin ">x</p>
       </div>
+      </div>
+     
     </div>
   );
 };

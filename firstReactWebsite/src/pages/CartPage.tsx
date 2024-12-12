@@ -22,32 +22,41 @@ const CartPage = ({
   decrementCounter,
 }: CartPageProps) => {
   return (
-    <div className="cart-page">
-      <div className="cart-page-content">
-        <div className="title">
-          <h3>Shopping Cart</h3>
-          {cartProducts.length === 0 && <p>your cart is empty</p>}
+    <div className="w-5/6 mx-auto">
+      <div className="mx-auto mb-16">
+        <h3 className="text-center text-5xl font-crimson">Your Cart</h3>
+        {cartProducts.length === 0 && (
+          <div>
+            <p>your cart is empty</p>{" "}
+            <Link to={"/shop"}>
+              <Button content={"Continue shopping"} />
+            </Link>
+          </div>
+        )}
+      </div>
+      <div className="flex justify-between">
+        <div className=" flex w-[60%] flex-col gap-8 ">
+          {cartProducts.map((cartProduct) => {
+            return (
+              <ShoppingCartElement
+                cartProduct={cartProduct}
+                key={cartProduct.id}
+                id={cartProduct.id}
+                removePlant={removePlant}
+                addPlant={addPlant}
+                decrementCounter={decrementCounter}
+              />
+            );
+          })}
         </div>
-        {cartProducts.map((cartProduct) => {
-          return (
-            <ShoppingCartElement
-              cartProduct={cartProduct}
-              key={cartProduct.id}
-              id={cartProduct.id}
-              removePlant={removePlant}
-              addPlant={addPlant}
-              decrementCounter={decrementCounter}
-            />
-          );
-        })}
-        <PriceCounter
-          cartProducts={cartProducts}
-          totalPrice={totalPrice}
-          shippingCost={shippingCost}
-        />
-        <Link to={"/shop"}>
-          <Button content={"Continue shopping"} />
-        </Link>
+
+        <div className="">
+          <PriceCounter
+            cartProducts={cartProducts}
+            totalPrice={totalPrice}
+            shippingCost={shippingCost}
+          />
+        </div>
       </div>
     </div>
   );
