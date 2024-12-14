@@ -14,7 +14,7 @@ const BenefitCard = ({ title, content, icon: Icon }: BenefitCardProps) => {
       </div>
 
       <div>
-        <h2 className="font-crimson text-[1.75rem]">{title}</h2>
+        <h2 className="text-[1.75rem]">{title}</h2>
         <p className="font-oxygen text-[1rem]">{content}</p>
       </div>
     </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Product } from "../types/types";
 import Products from "../components/Products";
 import TextContent from "../components/TextContent";
+import PageTitle from "../components/PageTitle";
 import SortingOptions from "../components/SortingOptions";
 import Notification from "../components/Notification";
 
@@ -26,7 +27,8 @@ const ShopPage = ({ products, addPlant }: ShopPageProps) => {
 
   return (
     <>
-      <TextContent title={"Our Plants"} />
+    {/* here */}
+      <PageTitle title={"Our Plants"} />
       <div className="flex flex-col justify-start">
       <SortingOptions sortMethod={sortMethod} setSortMethod={setSortMethod} />
       <Products products={sortedProducts} addPlant={addPlant} />

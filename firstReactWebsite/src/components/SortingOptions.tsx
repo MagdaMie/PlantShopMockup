@@ -11,7 +11,7 @@ const SortingOptions = ({ sortMethod, setSortMethod }: SortingoptionsProps) => {
         <select
           value={sortMethod}
           onChange={(e) => setSortMethod(e.target.value)}
-          className="p-1 rounded-md bg-[#242424]"
+          className="p-1 rounded-md bg-darkGray"
         >
           <option value="price low to high">price low to high</option>
           <option value="price high to low">price high to low</option>

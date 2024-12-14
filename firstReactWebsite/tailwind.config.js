@@ -1,4 +1,5 @@
-
+import formsPlugin from "@tailwindcss/forms";
+import textShadowPlugin from "tailwindcss-textshadow";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -20,6 +21,6 @@ export default {
         darkGray: "#242424",
       },
     },
-    plugins: ['@tailwindcss/forms']
+    plugins: [formsPlugin, textShadowPlugin],
   },
 };

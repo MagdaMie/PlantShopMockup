@@ -3,6 +3,7 @@ import ShoppingCartElement from "../components/ShopingCratElement";
 import PriceCounter from "../components/PriceCounter";
 import { Link } from "react-router-dom";
 import { Product } from "../types/types";
+import PageTitle from "../components/PageTitle";
 
 type CartPageProps = {
   cartProducts: Product[];
@@ -22,12 +23,12 @@ const CartPage = ({
   decrementCounter,
 }: CartPageProps) => {
   return (
-    <div className="w-5/6 mx-auto">
-      <div className="mx-auto mb-16">
-        <h3 className="text-center text-5xl font-crimson">Your Cart</h3>
+    <div className="w-5/6 mx-auto min-h-[60vh]">
+      <div>
+        <PageTitle title="Your Cart" />
         {cartProducts.length === 0 && (
-          <div>
-            <p>your cart is empty</p>{" "}
+          <div className="flex flex-col items-center m-6">
+            <p className="text-center text-lg mb-3">your cart is empty...</p>
             <Link to={"/shop"}>
               <Button content={"Continue shopping"} />
             </Link>

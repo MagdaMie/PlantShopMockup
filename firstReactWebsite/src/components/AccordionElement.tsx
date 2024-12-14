@@ -20,13 +20,13 @@ const AccordionElement = ({
         className="p-6 flex justify-between border border-white rounded-md "
         onClick={onClick}
       >
-        <p className="font-crimson text-lg">{question}</p>
+        <p className="text-lg">{question}</p>
         <button className="font-oxygen text-lg" style={style}>
           {isOpen? "x" : "v"}
         </button>
       </div>
       {isOpen && (
-        <div className="mt-3 p-6 bg-customGreen-light text-[#242424] font-crimson text-lg rounded-md">
+        <div className="mt-3 p-6 bg-customGreen-light text-darkGray text-lg rounded-md">
           <p>{anwser}</p>
         </div>
       )}

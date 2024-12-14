@@ -1,9 +1,9 @@
-import Button from "../components/Button.js";
 import { useParams } from "react-router-dom";
 import products from "../data/products.js";
 import { Product } from "../types/types";
 import Notification from "../components/Notification.js";
-import ProductDescription from "./ProductDescription.js";
+import ProductDescription from "../components/ProductDescription.js";
+import ProductDisplay from "./ProductDisplay.js";
 
 type ProductPageProps = {
   addPlant: (product: Product) => void;
@@ -23,11 +23,7 @@ const ProductPage = ({ addPlant }: ProductPageProps) => {
   }
   return (
     <div className="h-[85vh] flex">
-      <div className="bg-customGreen-dark bg-opacity-40 relative w-[20%]">
-        <div className="w-[300px] h-[85vh] absolute left-[60%] flex justify-center items-center">
-          <img src={product.cartImg} alt="" className="max-h-full max-w-[350px]"/>
-        </div>
-      </div>
+      <ProductDisplay product={product} />
       <ProductDescription product={product} addPlant={addPlant} />
       <Notification />
     </div>

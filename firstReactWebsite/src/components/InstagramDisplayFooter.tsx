@@ -5,7 +5,7 @@ const InstagramDisplayFooter = () => {
 
   return (
     <div>
-      <h2 className="font-crimson text-xlg mb-4">Followo us on instagram</h2>
+      <h2 className="text-xlg mb-4">Followo us on instagram</h2>
       <div className="flex  gap-2">
        {pictures.map(picture => {
         return <InstagramImg 

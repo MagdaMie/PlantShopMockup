@@ -1,5 +1,5 @@
-import Button from "../components/Button";
-import ProductCare from "../components/ProductCare";
+import Button from "./Button";
+import ProductCare from "./ProductCare";
 import { Product } from "../types/types";
 
 type ProductDescriptionProps = {

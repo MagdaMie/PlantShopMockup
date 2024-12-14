@@ -67,7 +67,7 @@ const PriceCounter = ({
           </div>
 
           {/* total */}
-          <div className="pt-4  flex justify-between font-bold uppercase border-t-2 border-t-[#242424]">
+          <div className="pt-4  flex justify-between font-bold uppercase border-t-2 border-t-darkGray">
             <p>Total</p>
             <p>${totalPrice + shippingCost}</p>
           </div>
