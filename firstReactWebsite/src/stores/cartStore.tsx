@@ -5,14 +5,15 @@ import useNotificationStore from "./notoficationStore";
 type CartState = {
   cartProducts: Product[];
 
-  addPlant: (product: Product) => void;
+  addPlant: (product: Product, showNotification?: boolean) => void;
   removePlant: (product: Product) => void;
   decrementCounter: (product: Product) => void;
 };
 const useCartStore = create<CartState>((set) => ({
   cartProducts: [],
 
-  addPlant: (product) =>
+  addPlant: (product, showNotification = true) => {
+    console.log("addPlant called with:", { product, showNotification }); // Debug
     set((prevState) => {
       const { setNotification } = useNotificationStore.getState();
 
@@ -21,16 +22,19 @@ const useCartStore = create<CartState>((set) => ({
       )
         ? prevState.cartProducts.map((cartProduct) => {
             if (cartProduct.id === product.id) {
-              
               return { ...cartProduct, counter: cartProduct.counter + 1 };
             }
             return cartProduct;
           })
         : [...prevState.cartProducts, product];
 
-      setNotification(`${product.name} has been added to the cart!`);
+      if (showNotification) {
+        setNotification(`${product.name} has been added to the cart!`);
+      }
+
       return { cartProducts: newCartProducts };
-    }),
+    });
+  },
   removePlant: (product) =>
     set((prevState) => {
       return {

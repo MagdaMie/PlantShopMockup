@@ -3,7 +3,7 @@ import { Product } from "../types/types";
 type ShoppingCartElementProps = {
   cartProduct: Product;
   removePlant: (cartProduct: Product) => void;
-  addPlant: (cartProduct: Product) => void;
+  addPlant: (cartProduct: Product, showNotification?:boolean) => void;
   decrementCounter: (cartProduct: Product) => void;
   id: number;
 };
@@ -14,6 +14,7 @@ const ShoppingCartElement = ({
   addPlant,
   decrementCounter,
 }: ShoppingCartElementProps) => {
+  const showNotification = false
   return (
     <div className="flex justify-between items-center">
       {/* plant */}
@@ -26,7 +27,7 @@ const ShoppingCartElement = ({
       <div className=" flex justify-center items-center rounded-xl w-[100px] h-[40px] bg-customGreen-dark bg-opacity-40">
         <p onClick={() => decrementCounter(cartProduct)} className="cursor-pointer px-3 ">-</p>
         <p>{cartProduct.counter}</p>
-        <p onClick={() => addPlant(cartProduct)} className="cursor-pointer px-3 ">+</p>
+        <p onClick={() => addPlant(cartProduct, showNotification)} className="cursor-pointer px-3 ">+</p>
       </div>
       {/* price */}
       <div className="flex items-center">

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Product } from "../types/types";
 import Products from "../components/Products";
-import TextContent from "../components/TextContent";
+
 import PageTitle from "../components/PageTitle";
 import SortingOptions from "../components/SortingOptions";
 import Notification from "../components/Notification";
@@ -24,6 +24,9 @@ const ShopPage = ({ products, addPlant }: ShopPageProps) => {
     }
     return 0;
   });
+
+
+
 
   return (
     <>

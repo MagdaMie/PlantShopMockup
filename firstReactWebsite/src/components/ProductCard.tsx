@@ -4,7 +4,7 @@ import { Product } from "../types/types";
 
 type ProductCardProps = {
   product: Product;
-  addPlant: (product: Product) => void;
+  addPlant: (product: Product, showNotification?: boolean) => void;
 };
 
 const ProductCard = ({ product, addPlant }: ProductCardProps) => {

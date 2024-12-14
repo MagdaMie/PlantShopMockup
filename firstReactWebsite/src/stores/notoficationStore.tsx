@@ -11,7 +11,16 @@ const useNotificationStore = create<NotificationState>((set) => ({
   notification: null,
   id:null,
   
-  setNotification: (message) => set({ notification: message, id: Date.now() }),
+  setNotification: (message) => {
+    set({ notification: message, id: Date.now() });
+
+    // Automatically clear notification after 3 seconds
+    setTimeout(() => {
+      set({ notification: null, id: null });
+    }, 2000);
+  },
+
+  
   clearNotification: () => set({notification:null, id:null})
 }));
 
