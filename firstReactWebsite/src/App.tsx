@@ -3,6 +3,7 @@ import { Suspense, lazy } from "react";
 import useCartStore from "./stores/cartStore";
 import products from "./data/products";
 import { Product } from "./types/types";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Header = lazy(() => import("./pages/Header"));
 const ProductPage = lazy(() => import("./pages/ProductPage"));
@@ -32,6 +33,7 @@ function App() {
 
   return (
     <>
+    <ScrollToTop/>
       <Suspense fallback={<div>Loading...</div>}>
         <Header numberOfCartProducts={numberOfCartProducts} />
       </Suspense>
