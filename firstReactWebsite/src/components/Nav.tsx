@@ -6,11 +6,11 @@ type NavProps = {
   displayHorizontal: boolean;
 }
 const Nav = ({ numberOfCartProducts, displayHorizontal }: NavProps) => {
-  const navH = "flex m-8";
-  const navV = "flex flex-col";
+  const navH = "hidden lg:flex lg:m-8";
+  const navV = "flex flex-col items-center lg:items-start";
 
   const navLinkDisplay =
-    "displayHorizontal ? my-0 mx-[1rem] : my-[0.25rem] mx-0";
+    "displayHorizontal ? my-0 mx-4 : my-1 mx-0";
 
   return (
     <div className={displayHorizontal ? navH : navV}>
