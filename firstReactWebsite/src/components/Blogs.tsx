@@ -15,7 +15,7 @@ const Blogs = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="mx-8 my-[5rem] grid grid-cols-3 ">
+    <div className="my-20 lg:mx-8 lg:grid lg:grid-cols-3 ">
       {posts?.map((post) => (
         <BlogCard
           id={post.id}

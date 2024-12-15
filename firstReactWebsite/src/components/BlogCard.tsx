@@ -2,9 +2,9 @@ import { Post } from "../types/types";
 
 const BlogCard = ({ title, content, author, date, authorImg, postImg } :Post) => {
   return (
-    <div className="bg-customGreen-dark mx-[1rem] rounded-lg">
-      <div className="m-[0.25rem] flex flex-col h-full ">
-        <div className="">
+    <div className="bg-customGreen-dark mx-4 rounded-lg">
+      <div className="m-6 flex flex-col h-full lg:m-1">
+        <div className="mt-6 lg:mt-0">
           <img className="w-[400px] rounded-lg " src={postImg} alt="" />
         </div>
         <div className="my-3 mx-2">

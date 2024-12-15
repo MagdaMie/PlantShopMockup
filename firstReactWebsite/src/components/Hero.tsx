@@ -3,11 +3,11 @@ import HeroImg from "./HeroImg";
 
 const Hero = () => {
   return (
-    <div className="flex my-[4rem] mx-[2rem]">
-      <div className="w-1/2 flex justify-center items-center ">
+    <div className="flex flex-col-reverse lg:flex-row lg:my-16 mx-8 my-4">
+      <div className="lg:w-1/2 flex justify-center items-center ">
         <HeroImg src={"/hero.jpg"} />
       </div>
-      <div className="w-1/2 flex items-center">
+      <div className="lg:w-1/2 lg:flex lg:items-center">
         <TextContent
           title={"get to know us"}
           paragraph={
