@@ -13,7 +13,7 @@ const ProductCard = ({ product, addPlant }: ProductCardProps) => {
   return (
     <div className="m-5">
       <Link to={`/product/${product.id}`}>
-        <div className="w-[250px] h-[350px] relative ">
+        <div className="w-[250px] h-[350px] relative">
           <img
             className="absolute bottom-[-10%] left-[-15%] transform hover:scale-110"
             src={product.img}

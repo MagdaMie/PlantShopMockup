@@ -30,7 +30,7 @@ const ShopPage = ({ products, addPlant }: ShopPageProps) => {
 
   return (
     <>
-    {/* here */}
+ 
       <PageTitle title={"Our Plants"} />
       <div className="flex flex-col justify-start">
       <SortingOptions sortMethod={sortMethod} setSortMethod={setSortMethod} />

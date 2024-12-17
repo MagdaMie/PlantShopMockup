@@ -5,7 +5,7 @@ type SortingoptionsProps = {
 
 const SortingOptions = ({ sortMethod, setSortMethod }: SortingoptionsProps) => {
   return (
-    <div className="flex ml-28 gap-6">
+    <div className="flex flex-col items-center gap-3 lg:flex-row lg:ml-28 lg:gap-6">
       <h3>Sort plants:</h3>
       <div className="border-2 border-customGreen-dark rounded-md">
         <select
