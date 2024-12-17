@@ -35,8 +35,8 @@ const CartPage = ({
           </div>
         )}
       </div>
-      <div className="flex justify-between">
-        <div className=" flex w-[60%] flex-col gap-8 ">
+      <div className="flex flex-col justify-between items-center gap-20 lg:flex-row lg:items-start">
+        <div className=" flex w-[60%] flex-col gap-14 md:gap-8 ">
           {cartProducts.map((cartProduct) => {
             return (
               <ShoppingCartElement
