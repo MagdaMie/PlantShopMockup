@@ -15,9 +15,9 @@ const AccordionElement = ({
   isOpen,
 }: AccordionElementProps) => {
   return (
-    <div className="my-4  mx-auto w-4/6 ">
+    <div className="my-4 mx-auto w-5/6 md:w-4/6 ">
       <div
-        className="p-6 flex justify-between border border-white rounded-md "
+        className="p-3  flex flex-col  justify-between border border-white rounded-md md:flex-row md:p-6"
         onClick={onClick}
       >
         <p className="text-lg">{question}</p>
