@@ -89,11 +89,12 @@ const ContactForm = () => {
           {errors.message.message}
         </div>
       )}
-      <Button
+      <div className="py-4">  <Button
         type="submit"
         content={isSubmitting ? "Submitting..." : "Submit"}
         disable={isSubmitting}
-      ></Button>
+      ></Button></div>
+    
     </form>
   );
 };

@@ -48,3 +48,7 @@ body {
 .care-item-img {
   @apply mb-2 h-[80px]
 }
+
+.contact-page-header {
+  @apply text-5xl font-bold md:text-7xl 
+}
