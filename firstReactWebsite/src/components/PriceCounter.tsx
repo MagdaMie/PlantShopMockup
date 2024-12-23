@@ -48,13 +48,13 @@ const PriceCounter = ({
   return (
     totalPrice !== 0 && (
       <div>
-        <div className="h-[390px] w-[330px] p-6 bg-customGreen-dark bg-opacity-40 rounded-lg md:w-[400px] md:h-[300px]">
+        <div className="h-[390px] w-[330px] p-6 bg-customGreen-dark bg-opacity-40 rounded-lg">
           {/* summary */}
           <h3 className="text-3xl pb-4">Order summary</h3>
           <div className="flex flex-col gap-4 text-lg">
             <div className="text-sm mb-2">
               {/* subtotal */}
-              <div className="flex  justify-between mb-2 ">
+              <div className="flex justify-between mb-2 ">
                 <p>Subtotal</p>
                 <p>${totalPrice}</p>
               </div>
@@ -71,7 +71,7 @@ const PriceCounter = ({
             <p>Total</p>
             <p>${totalPrice + shippingCost}</p>
           </div>
-          <div className="mt-3 flex flex-col gap-4 justify-around items-center lg:flex-row lg:gap-0">
+          <div className="mt-3 flex flex-col gap-4 justify-around items-center">
             <Button
               content={"Checkout"}
               onClick={handlePayment}

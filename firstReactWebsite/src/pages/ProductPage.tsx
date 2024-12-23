@@ -22,7 +22,7 @@ const ProductPage = ({ addPlant }: ProductPageProps) => {
     return <div>Loading..</div>;
   }
   return (
-    <div className="flex flex-col  lg:flex-row">
+    <div className="flex flex-col lg:flex-row">
       <ProductDisplay product={product} />
       <ProductDescription product={product} addPlant={addPlant} />
       <Notification />

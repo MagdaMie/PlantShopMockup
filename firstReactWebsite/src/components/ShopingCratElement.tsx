@@ -18,7 +18,7 @@ const ShoppingCartElement = ({
   return (
     <div className="flex flex-col items-center gap-3 md:gap-10 md:flex-row md:justify-start">
       {/* plant */}
-      <div className="flex justify-around items-center  w-[300px]">
+      <div className="flex justify-around items-center w-[300px]">
         <img
           src={cartProduct.cartImg}
           alt="plant's picure"

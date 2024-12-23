@@ -23,7 +23,7 @@
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
@@ -48,7 +48,7 @@ body {
 /* product page */
 @screen lg {
   .product-display-lg {
-    @apply w-[300px] min-h-[55vh] absolute left-[50%] p-0;
+    @apply w-[300px]  absolute left-[50%] p-0;
   }
 }
 
