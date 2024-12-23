@@ -1,5 +1,5 @@
 import Button from "./Button";
-import useSWRMutation from "swr/mutation";
+
 import { Product } from "../types/types";
 import { Link } from "react-router-dom";
 
@@ -15,35 +15,6 @@ const PriceCounter = ({
   shippingCost,
 }: PriceCounterProps) => {
   const products = cartProducts;
-
-  const fetchPayment = async (url: string) => {
-    return fetch(url, {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify(products),
-    }).then((res) => res.json());
-  };
-  const { trigger, isMutating } = useSWRMutation(
-    `http://localhost:3000/checkout`,
-    fetchPayment
-  );
-
-  const handlePayment = async () => {
-    try {
-      const data = await trigger();
-      console.log(data);
-      if (data) {
-        window.location.href = data;
-      } else {
-        console.error("Failed to get the checkout URL");
-      }
-    } catch (error) {
-      console.error("Error during payment process:", error);
-    }
-  };
 
   return (
     totalPrice !== 0 && (
@@ -72,11 +43,7 @@ const PriceCounter = ({
             <p>${totalPrice + shippingCost}</p>
           </div>
           <div className="mt-3 flex flex-col gap-4 justify-around items-center">
-            <Button
-              content={"Checkout"}
-              onClick={handlePayment}
-              disable={isMutating}
-            />
+            <Button content={"Checkout"} />
             <Link to={"/shop"}>
               <Button content={"Continue shopping"} />
             </Link>
