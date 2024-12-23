@@ -14,6 +14,7 @@ const ContactPage = lazy(() => import("./pages/ContactPage"));
 const CartPage = lazy(() => import("./pages/CartPage"));
 const Footer = lazy(() => import("./pages/Footer"));
 
+
 function App() {
   const cartProducts = useCartStore((state) => state.cartProducts);
   const addPlant = useCartStore((state) => state.addPlant);
