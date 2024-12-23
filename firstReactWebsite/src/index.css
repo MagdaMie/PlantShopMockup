@@ -19,7 +19,7 @@
   --green: #6d8777;
   --light-green: #c0cfb2;
   --very-light-green: #e4e6d9;
-  --gray:#242424;
+  --gray: #242424;
 }
 
 body {
@@ -33,8 +33,11 @@ body {
   color: rgba(255, 255, 255, 0.87);
   background-color: var(--gray);
 }
-
-
+/* general */
+.contact-page-header {
+  @apply text-5xl font-bold md:text-7xl;
+}
+/* contact page */
 .input-field {
   @apply p-2 text-sm font-oxygen bg-[#242424] m-3 w-[300px] rounded-md;
 }
@@ -42,13 +45,21 @@ body {
   @apply text-red-300 font-oxygen text-sm;
 }
 
-.care-item {
-  @apply flex flex-col items-center mr-8}
-
-.care-item-img {
-  @apply mb-2 h-[80px]
+/* product page */
+@screen lg {
+  .product-display-lg {
+    @apply w-[300px] min-h-[55vh] absolute left-[50%] p-0;
+  }
 }
 
-.contact-page-header {
-  @apply text-5xl font-bold md:text-7xl 
+.care-item {
+  @apply flex flex-col items-center md:mr-8;
+}
+
+.care-item-img {
+  @apply mb-2 h-[40px] md:h-[80px];
+}
+
+.care-item-p {
+  @apply text-sm md:text-base;
 }

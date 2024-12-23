@@ -5,8 +5,8 @@ type ProductDisplayProps = {
 };
 const ProductDisplay = ({ product }: ProductDisplayProps) => {
   return (
-    <div className="bg-customGreen-dark bg-opacity-40 relative w-[20%]">
-      <div className="w-[300px] h-[85vh] absolute left-[60%] flex justify-center items-center">
+    <div className="bg-customGreen-dark bg-opacity-40 relative md:w-[20%]">
+      <div className="product-display-lg flex justify-center items-center p-10">
         <img
           src={product.cartImg}
           alt=""

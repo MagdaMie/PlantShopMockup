@@ -3,7 +3,7 @@ import products from "../data/products.js";
 import { Product } from "../types/types";
 import Notification from "../components/Notification.js";
 import ProductDescription from "../components/ProductDescription.js";
-import ProductDisplay from "./ProductDisplay.js";
+import ProductDisplay from "../components/ProductDisplay.js";
 
 type ProductPageProps = {
   addPlant: (product: Product) => void;
@@ -22,7 +22,7 @@ const ProductPage = ({ addPlant }: ProductPageProps) => {
     return <div>Loading..</div>;
   }
   return (
-    <div className="h-[85vh] flex">
+    <div className="flex flex-col  lg:flex-row">
       <ProductDisplay product={product} />
       <ProductDescription product={product} addPlant={addPlant} />
       <Notification />
