@@ -1,5 +1,4 @@
 import Button from "./Button";
-
 import { Product } from "../types/types";
 import { Link } from "react-router-dom";
 
