@@ -24,3 +24,4 @@ export default {
     plugins: [formsPlugin, textShadowPlugin],
   },
 };
+console.log("Tailwind configuration loaded");
