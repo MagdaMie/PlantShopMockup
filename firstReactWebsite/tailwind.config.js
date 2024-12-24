@@ -1,3 +1,5 @@
+console.log("Tailwind configuration loaded");
+
 import formsPlugin from "@tailwindcss/forms";
 import textShadowPlugin from "tailwindcss-textshadow";
 
@@ -24,4 +26,3 @@ export default {
     plugins: [formsPlugin, textShadowPlugin],
   },
 };
-console.log("Tailwind configuration loaded");
