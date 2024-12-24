@@ -1,7 +1,7 @@
 console.log("Tailwind configuration loaded");
 
 import formsPlugin from "@tailwindcss/forms";
-import textShadowPlugin from "tailwindcss-textshadow";
+
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -21,8 +21,8 @@ export default {
           "very-light": "#e4e6d9",
         },
         darkGray: "#242424",
-      },
+      }
     },
-    plugins: [formsPlugin, textShadowPlugin],
+    plugins: [formsPlugin],
   },
 };
