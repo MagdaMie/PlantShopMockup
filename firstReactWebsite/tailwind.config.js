@@ -1,11 +1,8 @@
-console.log("Tailwind configuration loaded");
-
 import formsPlugin from "@tailwindcss/forms";
-
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [ "./src/**/*.{js,ts,jsx,tsx}", "./index.html" ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}", "./index.html"],
   theme: {
     extend: {
       fontFamily: {
@@ -21,7 +18,7 @@ export default {
           "very-light": "#e4e6d9",
         },
         darkGray: "#242424",
-      }
+      },
     },
     plugins: [formsPlugin],
   },
