@@ -1,1 +1,0 @@
-import{j as e}from"./index-Cozy1Tw1.js";const c=({title:t,paragraph:s})=>e.jsxs("div",{className:"flex-col items-center justify-center mb-14",children:[e.jsx("h3",{className:" text-center text-5xl ",children:t}),e.jsx("p",{className:"text-center mt-6",children:s})]});export{c as P};
