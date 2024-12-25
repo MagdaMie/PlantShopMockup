@@ -2,7 +2,7 @@ import formsPlugin from "@tailwindcss/forms";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{js,ts,jsx,tsx}", "./index.html"],
+  content: ["./src/pages/**/*.{js,ts,jsx,tsx}", "./src/componets/**/*.{js,ts,jsx,tsx}", "./index.html"],
   theme: {
     extend: {
       fontFamily: {
