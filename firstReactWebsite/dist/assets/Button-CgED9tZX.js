@@ -1,0 +1,1 @@
+import{j as s}from"./index-Cgp0KkQg.js";const u=({content:e,onClick:t,disable:r,type:o})=>s.jsx("button",{className:"bg-customGreen-dark px-[18px] py-2 rounded-3xl hover:bg-customGreen-default text-center",onClick:t,disabled:r,type:o,children:e});export{u as B};
