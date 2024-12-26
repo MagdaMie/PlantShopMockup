@@ -1,11 +1,3 @@
 /* 
   Cache-Control: public, max-age=0, must-revalidate
 
-/assets/*.js
-  Content-Type: application/javascript
-
-/assets/*.css
-  Content-Type: text/css
-
-/assets/*.html
-  Content-Type: text/html
