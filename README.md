@@ -10,3 +10,23 @@ This project is a mockup of a plant shop designed to showcase my front-end devel
 - **Cart Page:** Users can add plants to their cart, view the contents, and see a subtotal of the items.
 
 ### 🛠️ Tech Stack
+
+**Main Technologies:**
+- React (Built with JavaScript/TypeScript)
+- Tailwind CSS
+- TypeScript (JavaScript superset)
+
+**Libraries/Tools Used:**
+- SWR (Data fetching)
+- Zustand (State management)
+- React Hook Form (Handling forms)
+- React Router (Routing between pages)
+- Zod (Schema validation)
+
+**Additional Features:**
+- Portals (For rendering notifications outside the DOM hierarchy)
+- Responsive Layout (Tailwind makes it easy to adjust for various screen sizes)
+
+**Version Control & Deployment:**
+- Git & GitHub (Version control and repository hosting)
+- Netlify (Deployment and continuous integration)
