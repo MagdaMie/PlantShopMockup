@@ -1,4 +1,8 @@
 /* 
   Cache-Control: public, max-age=0, must-revalidate
+<<<<<<< HEAD
 /assets/* 
   Content-Type: application/javascript
+=======
+
+>>>>>>> f6fd0f967f7622c6826234b27e2c13653a92cea1
