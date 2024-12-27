@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&family=Oxygen&display=swap");
+
+:root {
+  height: 100%;
+  font-family: "Crimson Text", serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 1.25rem;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --very-dark-gren: #273526;
+  --dark-green: #45624e;
+  --green: #6d8777;
+  --light-green: #c0cfb2;
+  --very-light-green: #e4e6d9;
+  --gray: #242424;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  max-width: 1440px;
+  box-sizing: border-box;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: var(--gray);
+}
+/* general */
+.contact-page-header {
+  @apply text-5xl font-bold md:text-7xl;
+}
+/* contact page */
+.input-field {
+  @apply p-2 text-sm font-oxygen bg-[#242424] m-3 w-[300px] rounded-md;
+}
+.error-text {
+  @apply text-red-300 font-oxygen text-sm;
+}
+
+/* product page */
+@screen lg {
+  .product-display-lg {
+    @apply w-[300px]  absolute left-[50%] p-0;
+  }
+}
+
+.care-item {
+  @apply flex flex-col items-center md:mr-8;
+}
+
+.care-item-img {
+  @apply mb-2 h-[40px] md:h-[80px];
+}
+
+.care-item-p {
+  @apply text-sm md:text-base;
+}
