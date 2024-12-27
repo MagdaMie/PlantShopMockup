@@ -33,7 +33,7 @@ This project is a mockup of a plant shop designed to showcase my front-end devel
  - Netlify (Deployment and continuous integration)
 
 ## 🚀 Future Enhancements
- - Improve image loading speed
+ - Improve images loading speed
  - &&more to come
 
 ## 📬 Contact Me
