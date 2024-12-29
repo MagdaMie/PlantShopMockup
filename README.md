@@ -1,5 +1,6 @@
 ![Header](./firstReactWebsite/public/github-header-image.png)
 
+## 📝Project Overview
 This project is a mockup of a plant shop designed to showcase my front-end development skills. Built using React and Tailwind CSS, the app offers a variety of features that simulate the user experience of browsing and interacting with an online store. You can check out the live version of the project [here](https://showcase-store-miedziak.netlify.app/).
 
 ## 💡Key Features
@@ -10,7 +11,7 @@ This project is a mockup of a plant shop designed to showcase my front-end devel
  🤔💡 **FAQ Page**: A page with collapsible answers to frequently asked questions, making it easy for users to find quick information.<br><br>
  🛒🧾 **Cart Page:** Users can add plants to their cart, view the contents, edit it, and see a subtotal of the items.<br>
 
-## 🛠️ Tech Stack
+## 🛠️Tech Stack
 
 **Main Technologies:**
  - React (Built with JavaScript/TypeScript)
@@ -32,7 +33,7 @@ This project is a mockup of a plant shop designed to showcase my front-end devel
  - Git & GitHub (Version control and repository hosting)
  - Netlify (Deployment and continuous integration)
 
-## 🧩🧠 Challenges&Solution <br>
+## 🧩🧠Challenges & Solutions <br> 
 **🧩: Enabling navigation between different pages (e.g., Home, Shop, Plant Page) in a single-page application without full page reloads.**<br>
 🧠: Integrated React Router to manage dynamic routing, allowing transitions between components. Configured routes for each page and utilized the useParams hook to display individual plant pages based on URL parameters.
 <br><br>
@@ -63,11 +64,11 @@ This project is a mockup of a plant shop designed to showcase my front-end devel
 🧠: Created a Notification component and store using Zustand for managing notification state globally. Integrated the notification system with the cart and contact form. To ensure a smooth user experience, a React Portal was used to render the notifications outside the main DOM structure, allowing them to appear in a consistent location across the application, independent of the component hierarchy.
 <br><br>
 
-## 🚀 Future Enhancements
+## 🚀Future Enhancements
  - Improve images loading speed
  - &&more to come
 
-## 📬 Contact Me
+## 📬Contact Me
 Feel free to reach out for any inquiries or opportunities. I’d love to connect!
 
  - Email: [miedziak.magdalena@gmail.com](mailto:miedziak.magdalena@gmail.com)
