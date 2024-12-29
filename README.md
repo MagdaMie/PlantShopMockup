@@ -16,7 +16,7 @@ This project is a mockup of a plant shop designed to showcase my front-end devel
 **Main Technologies:**
  - React (Built with JavaScript/TypeScript)
  - Tailwind CSS
- - TypeScript (JavaScript superset)
+ - TypeScript
 
 **Libraries/Tools Used:**
  - SWR (Data fetching)
