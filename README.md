@@ -6,7 +6,7 @@ This project is a mockup of a plant shop designed to showcase my front-end devel
 ## 💡Key Features
  🌱🏠 **Home Page:** A typical layout for a home page with sections showcasing a banner with a quick link to the shop, a hero section, visually appealing shop benefits, and **blog post mockups fetched from an API**.<br><br>
  🛒🌿 **Plant Shop:** A page where users can browse through a collection of plants, view details for each plant, and explore individual plant pages.<br><br>
- 🪴📄 **Individual Plant Pages:** Each plant has its own page displaying detailed information and options for adding to the cart.<br><br>
+ 🪴📄 **Individual Product Pages:** Each plant has its own page displaying detailed information and options for adding to the cart.<br><br>
  📝📮 **Contact Form:** A simple, functioning contact form that allows users to reach out with inquiries.<br><br>
  🤔💡 **FAQ Page**: A page with collapsible answers to frequently asked questions, making it easy for users to find quick information.<br><br>
  🛒🧾 **Cart Page:** Users can add plants to their cart, view the contents, edit it, and see a subtotal of the items.<br>
