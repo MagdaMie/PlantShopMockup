@@ -1,17 +1,16 @@
-import useSWR from 'swr';
+import useSWR from "swr";
 import { RawPost } from "../types/types";
-
 import { UseFetchPostsReturnType } from "../types/types";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-const useFetchPosts = (url:string):  UseFetchPostsReturnType => {
+const useFetchPosts = (url: string): UseFetchPostsReturnType => {
   const { data, error } = useSWR<RawPost[]>(url, fetcher);
 
   if (error) return { posts: null, error };
   if (!data) return { posts: null, loading: true };
 
-const rawPosts = data.slice(0, 3)
+  const rawPosts = data.slice(0, 3);
 
   const posts = rawPosts.map((rawPost) => ({
     ...rawPost,
@@ -22,8 +21,6 @@ const rawPosts = data.slice(0, 3)
   }));
 
   return { posts, loading: false, error: null };
-
-
 
   // const [posts, setPosts] = useState([])
 

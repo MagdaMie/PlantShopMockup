@@ -1,12 +1,11 @@
 import TextContent from "./TextContent";
-import HeroImg from "./HeroImg";
+import HeroImageSection from "./HeroImageSection";
 
 const Hero = () => {
   return (
     <div className="flex flex-col-reverse lg:flex-row lg:my-16 mx-8 my-4">
-      <div className="lg:w-1/2 flex justify-center items-center ">
-        <HeroImg src={"/hero.jpg"} />
-      </div>
+      <HeroImageSection />
+
       <div className="lg:w-1/2 lg:flex lg:items-center">
         <TextContent
           title={"get to know us"}

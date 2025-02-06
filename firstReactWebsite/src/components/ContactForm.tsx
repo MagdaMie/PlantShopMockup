@@ -110,7 +110,7 @@ const ContactForm = () => {
 
 //   const handleChange = (e) => {
 //     const { name, value } = e.target;
-//     setFormData({ ...formData, [name]: value });
+//     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
 //   };
 
 //   const sendEmail = (e) => {

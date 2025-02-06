@@ -42,7 +42,7 @@ body {
   @apply p-2 text-sm font-oxygen bg-[#242424] m-3 w-[300px] rounded-md;
 }
 .error-text {
-  @apply text-red-300 font-oxygen text-sm;
+  @apply inline -mt-3 text-red-300 font-oxygen text-xs;
 }
 
 /* product page */
