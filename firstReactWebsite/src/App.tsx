@@ -14,13 +14,11 @@ const ContactPage = lazy(() => import("./pages/ContactPage"));
 const CartPage = lazy(() => import("./pages/CartPage"));
 const Footer = lazy(() => import("./pages/Footer"));
 
-
 function App() {
   const cartProducts = useCartStore((state) => state.cartProducts);
   const addPlant = useCartStore((state) => state.addPlant);
   const removePlant = useCartStore((state) => state.removePlant);
   const decrementCounter = useCartStore((state) => state.decrementCounter);
-
 
   let numberOfCartProducts = 0;
   let totalPrice = 0;
@@ -33,81 +31,79 @@ function App() {
   const shippingCost = totalPrice > 150 ? 0 : 10 * numberOfCartProducts;
 
   return (
-    <>
-    <ScrollToTop/>
+    <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
       <Suspense fallback={<div>Loading...</div>}>
         <Header numberOfCartProducts={numberOfCartProducts} />
       </Suspense>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Suspense fallback={<div>Loading Home...</div>}>
-              <Home />
-            </Suspense>
-          }
-        />
+      <main className="flex-1">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Suspense fallback={<div>Loading Home...</div>}>
+                <Home />
+              </Suspense>
+            }
+          />
 
-        <Route
-          path="/shop"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <ShopPage
-                products={products}
-                addPlant={addPlant}
-            
-              />
-            </Suspense>
-          }
-        />
+          <Route
+            path="/shop"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <ShopPage products={products} addPlant={addPlant} />
+              </Suspense>
+            }
+          />
 
-        <Route
-          path="/contact"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <ContactPage />
-            </Suspense>
-          }
-        />
+          <Route
+            path="/contact"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <ContactPage />
+              </Suspense>
+            }
+          />
 
-        <Route
-          path="/FAQ"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <FaqPage />
-            </Suspense>
-          }
-        />
+          <Route
+            path="/FAQ"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <FaqPage />
+              </Suspense>
+            }
+          />
 
-        <Route
-          path="/product/:id"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <ProductPage addPlant={addPlant}  />
-            </Suspense>
-          }
-        />
+          <Route
+            path="/product/:id"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <ProductPage addPlant={addPlant} />
+              </Suspense>
+            }
+          />
 
-        <Route
-          path="/cart"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <CartPage
-                cartProducts={cartProducts}
-                totalPrice={totalPrice}
-                shippingCost={shippingCost}
-                removePlant={removePlant}
-                addPlant={addPlant}
-                decrementCounter={decrementCounter}
-              />
-            </Suspense>
-          }
-        />
-      </Routes>
+          <Route
+            path="/cart"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <CartPage
+                  cartProducts={cartProducts}
+                  totalPrice={totalPrice}
+                  shippingCost={shippingCost}
+                  removePlant={removePlant}
+                  addPlant={addPlant}
+                  decrementCounter={decrementCounter}
+                />
+              </Suspense>
+            }
+          />
+        </Routes>
+      </main>
       <Suspense fallback={<div>Loading...</div>}>
         <Footer />
       </Suspense>
-    </>
+    </div>
   );
 }
 

@@ -4,10 +4,10 @@ import Notification from "../components/Notification";
 
 const ContactPage = () => {
   return (
-    <div className="flex flex-col md:flex-row md:h-[85vh]">
+    <div className="flex flex-col md:flex-row ">
       <ContactBaner />
 
-      <div className="flex flex-col justify-center items-center bg-customGreen-dark bg-opacity-40 py-4 md:flex-1 md:py-0">
+      <div className="flex flex-col justify-center items-center md:flex-row  bg-customGreen-dark bg-opacity-40 py-4 md:flex-1 md:py-0">
         <ContactForm />
       </div>
       <Notification />
