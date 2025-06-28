@@ -28,7 +28,13 @@ function App() {
     totalPrice += plant.counter * plant.price;
   });
 
-  const shippingCost = totalPrice > 150 ? 0 : 10 * numberOfCartProducts;
+  const SHIPPING_THRESHOLD = 150;
+  const FREE_SHIPPING_COST = 0;
+  const SHIPPING_COST_BASE = 10;
+  const shippingCost =
+    totalPrice > SHIPPING_THRESHOLD
+      ? FREE_SHIPPING_COST
+      : SHIPPING_COST_BASE * numberOfCartProducts;
 
   return (
     <div className="flex flex-col min-h-screen">
