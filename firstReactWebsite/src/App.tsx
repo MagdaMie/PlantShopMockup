@@ -4,6 +4,7 @@ import useCartStore from "./stores/cartStore";
 import products from "./data/products";
 import { Product } from "./types/types";
 import ScrollToTop from "./components/ScrollToTop";
+import { useMemo } from "react";
 
 const Header = lazy(() => import("./pages/Header"));
 const ProductPage = lazy(() => import("./pages/ProductPage"));
@@ -20,13 +21,16 @@ function App() {
   const removePlant = useCartStore((state) => state.removePlant);
   const decrementCounter = useCartStore((state) => state.decrementCounter);
 
-  let numberOfCartProducts = 0;
-  let totalPrice = 0;
-
-  cartProducts.forEach((plant: Product) => {
-    numberOfCartProducts += plant.counter;
-    totalPrice += plant.counter * plant.price;
-  });
+  const { numberOfCartProducts, totalPrice } = useMemo(() => {
+    return cartProducts.reduce(
+      (acc, plant) => {
+        acc.numberOfCartProducts += plant.counter;
+        acc.totalPrice += plant.counter * plant.price;
+        return acc;
+      },
+      { numberOfCartProducts: 0, totalPrice: 0 }
+    );
+  }, [cartProducts]);
 
   const SHIPPING_THRESHOLD = 150;
   const FREE_SHIPPING_COST = 0;
