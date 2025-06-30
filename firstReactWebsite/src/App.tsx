@@ -1,10 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import { Suspense, lazy } from "react";
+import { lazy } from "react";
 import useCartStore from "./stores/cartStore";
 import products from "./data/products";
-import { Product } from "./types/types";
 import ScrollToTop from "./components/ScrollToTop";
 import { useMemo } from "react";
+import SuspenseWrapper from "./components/SuspenseWrapper";
+import { PATHS } from "./data/routes";
 
 const Header = lazy(() => import("./pages/Header"));
 const ProductPage = lazy(() => import("./pages/ProductPage"));
@@ -43,60 +44,60 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <ScrollToTop />
-      <Suspense fallback={<div>Loading...</div>}>
+      <SuspenseWrapper>
         <Header numberOfCartProducts={numberOfCartProducts} />
-      </Suspense>
+      </SuspenseWrapper>
       <main className="flex-1">
         <Routes>
           <Route
-            path="/"
+            path={PATHS.HOME}
             element={
-              <Suspense fallback={<div>Loading Home...</div>}>
+              <SuspenseWrapper>
                 <Home />
-              </Suspense>
+              </SuspenseWrapper>
             }
           />
 
           <Route
-            path="/shop"
+            path={PATHS.SHOP}
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <SuspenseWrapper>
                 <ShopPage products={products} addPlant={addPlant} />
-              </Suspense>
+              </SuspenseWrapper>
             }
           />
 
           <Route
-            path="/contact"
+            path={PATHS.CONTACT}
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <SuspenseWrapper>
                 <ContactPage />
-              </Suspense>
+              </SuspenseWrapper>
             }
           />
 
           <Route
-            path="/FAQ"
+            path={PATHS.FAQ}
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <SuspenseWrapper>
                 <FaqPage />
-              </Suspense>
+              </SuspenseWrapper>
             }
           />
 
           <Route
-            path="/product/:id"
+            path={PATHS.PRODUCT}
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <SuspenseWrapper>
                 <ProductPage addPlant={addPlant} />
-              </Suspense>
+              </SuspenseWrapper>
             }
           />
 
           <Route
-            path="/cart"
+            path={PATHS.CART}
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <SuspenseWrapper>
                 <CartPage
                   cartProducts={cartProducts}
                   totalPrice={totalPrice}
@@ -105,14 +106,14 @@ function App() {
                   addPlant={addPlant}
                   decrementCounter={decrementCounter}
                 />
-              </Suspense>
+              </SuspenseWrapper>
             }
           />
         </Routes>
       </main>
-      <Suspense fallback={<div>Loading...</div>}>
+      <SuspenseWrapper>
         <Footer />
-      </Suspense>
+      </SuspenseWrapper>
     </div>
   );
 }
