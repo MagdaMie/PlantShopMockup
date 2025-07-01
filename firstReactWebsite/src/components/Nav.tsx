@@ -10,24 +10,24 @@ const Nav = ({ numberOfCartProducts, displayHorizontal }: NavProps) => {
   const navV = "flex flex-col items-center lg:items-start";
 
   const navLinkDisplay =
-    "displayHorizontal ? my-0 mx-4 : my-1 mx-0";
+    "displayHorizontal ? my-0 mx-4 : my-1 mx-0 uppercase";
 
   return (
     <div className={displayHorizontal ? navH : navV}>
       <NavLink className={navLinkDisplay} to={"/"}>
-        HOME
+        home
       </NavLink>
       <NavLink className={navLinkDisplay} to={"/shop"}>
-        SHOP
+        shop
       </NavLink>
       <NavLink className={navLinkDisplay} to={"/contact"}>
-        CONTACT
+        contact
       </NavLink>
       <NavLink className={navLinkDisplay} to={"/FAQ"}>
-        FAQ
+        faq
       </NavLink>
       <NavLink className={navLinkDisplay} to={"/cart"}>
-        CART {numberOfCartProducts}
+        cart {numberOfCartProducts}
       </NavLink>
     </div>
   );
