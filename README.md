@@ -1,4 +1,4 @@
-![Header](./firstReactWebsite/public/github-header-image.png)
+![Header](./public/github-header-image.png)
 
 ## 📝Project Overview
 This project is a mockup of a plant shop designed to showcase my front-end development skills. Built using React and Tailwind CSS, the app offers a variety of features that simulate the user experience of browsing and interacting with an online store. You can check out the live version of the project [here](https://showcase-store-miedziak.netlify.app/).
