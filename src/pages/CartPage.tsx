@@ -36,7 +36,7 @@ const CartPage = ({
         )}
       </div>
       <div className="flex flex-col justify-between items-center gap-20 md:justify-center  lg:flex-row lg:items-start">
-        <div className=" flex w-[60%] flex-col items-center gap-14 md:gap-8 ">
+        <div className="flex w-[60%] flex-col items-center gap-14 md:gap-8 ">
           {cartProducts.map((cartProduct) => {
             return (
               <ShoppingCartElement
@@ -51,7 +51,7 @@ const CartPage = ({
           })}
         </div>
 
-        <div className="">
+        <div>
           <PriceCounter
             cartProducts={cartProducts}
             totalPrice={totalPrice}

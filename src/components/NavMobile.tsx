@@ -14,7 +14,7 @@ const NavMobile = ({ numberOfCartProducts }: NavMobileProps) => {
   };
   return (
     <div className="flex  lg:hidden">
-      <button onClick={toggleMenu} className="">
+      <button onClick={toggleMenu}>
         <div className="space-y-1 m-2">
           <div className="w-6 h-0.5 bg-gray-400"></div>
           <div className="w-6 h-0.5 bg-gray-400"></div>
