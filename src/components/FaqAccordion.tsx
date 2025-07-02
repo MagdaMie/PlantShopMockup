@@ -35,7 +35,6 @@ const FaqAccordion = () => {
               openElement(faq.id);
             }}
             isOpen={isOpen}
-            style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
           />
         );
       })}

@@ -1,8 +1,8 @@
 import { Question } from "../types/types";
 import { CSSProperties } from "react";
+import { X, ChevronDown } from "lucide-react";
 
 type AccordionElementProps = Question & {
-  style: CSSProperties;
   isOpen: boolean;
   onClick: React.MouseEventHandler<HTMLDivElement>;
 };
@@ -11,7 +11,6 @@ const AccordionElement = ({
   question,
   anwser,
   onClick,
-  style,
   isOpen,
 }: AccordionElementProps) => {
   return (
@@ -21,8 +20,8 @@ const AccordionElement = ({
         onClick={onClick}
       >
         <p className="text-lg">{question}</p>
-        <button className="font-oxygen text-lg" style={style}>
-          {isOpen? "x" : "v"}
+        <button className="font-oxygen text-lg">
+          {isOpen ? <X size={24} /> : <ChevronDown size={24} />}
         </button>
       </div>
       {isOpen && (
