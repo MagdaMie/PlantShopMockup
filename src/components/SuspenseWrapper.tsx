@@ -7,4 +7,4 @@ const SuspenseWrapper = ({ children, fallbackText = "loading..." }: Props) => {
   return <Suspense fallback={<div>{fallbackText}</div>}>{children}</Suspense>;
 };
 
-export default SuspenseWrapper
+export default SuspenseWrapper;

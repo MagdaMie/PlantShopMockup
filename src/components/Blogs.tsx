@@ -4,7 +4,7 @@ import useFetchPosts from "../hooks/useFetchPosts";
 
 const Blogs = () => {
   const { posts, loading, error } = useFetchPosts(
-    "https://jsonplaceholder.typicode.com/posts"
+    "https://jsonplaceholder.typicode.com/posts",
   );
 
   if (error) {
@@ -15,7 +15,7 @@ const Blogs = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="my-20 lg:mx-8 lg:grid lg:grid-cols-3 ">
+    <div className="my-20 lg:mx-8 lg:grid lg:grid-cols-3">
       {posts?.map((post) => (
         <BlogCard
           id={post.id}

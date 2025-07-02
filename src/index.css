@@ -39,16 +39,16 @@ body {
 }
 /* contact page */
 .input-field {
-  @apply p-2 text-sm font-oxygen bg-[#242424] m-3 w-[300px] rounded-md;
+  @apply m-3 w-[300px] rounded-md bg-[#242424] p-2 font-oxygen text-sm;
 }
 .error-text {
-  @apply inline -mt-3 text-red-300 font-oxygen text-xs;
+  @apply -mt-3 inline font-oxygen text-xs text-red-300;
 }
 
 /* product page */
 @screen lg {
   .product-display-lg {
-    @apply w-[300px]  absolute left-[50%] p-0;
+    @apply absolute left-[50%] w-[300px] p-0;
   }
 }
 

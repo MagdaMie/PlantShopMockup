@@ -13,18 +13,18 @@ const NavMobile = ({ numberOfCartProducts }: NavMobileProps) => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="flex  lg:hidden">
+    <div className="flex lg:hidden">
       <button onClick={toggleMenu}>
-        <div className="space-y-1 m-2">
-          <div className="w-6 h-0.5 bg-gray-400"></div>
-          <div className="w-6 h-0.5 bg-gray-400"></div>
-          <div className="w-6 h-0.5 bg-gray-400"></div>
+        <div className="m-2 space-y-1">
+          <div className="h-0.5 w-6 bg-gray-400"></div>
+          <div className="h-0.5 w-6 bg-gray-400"></div>
+          <div className="h-0.5 w-6 bg-gray-400"></div>
         </div>
       </button>
 
       {isOpen && (
-        <div className="absolute right-0  top-12 bg-darkGray bg-opacity-90">
-          <div className=" flex flex-col items-s p-4 space-y-2">
+        <div className="absolute right-0 top-12 bg-darkGray bg-opacity-90">
+          <div className="items-s flex flex-col space-y-2 p-4">
             {NAV_LINKS.map((link, index) => (
               <NavLink
                 key={index}

@@ -2,9 +2,9 @@ import { FaMoneyBillWave } from "react-icons/fa";
 import { MdReviews } from "react-icons/md";
 import { FaGift } from "react-icons/fa6";
 import { FaTruckArrowRight } from "react-icons/fa6";
-import { Benefit} from "../types/types"
+import { Benefit } from "../types/types";
 
-const benefits :Benefit[] = [
+const benefits: Benefit[] = [
   {
     title: "Fast and Free Delivery",
     content: "Free delivery for all orders above $150",
@@ -28,7 +28,7 @@ const benefits :Benefit[] = [
     content: "We return money withing 30 days",
     icon: FaMoneyBillWave,
     id: 4,
-  }
+  },
 ];
 
-export default benefits
+export default benefits;

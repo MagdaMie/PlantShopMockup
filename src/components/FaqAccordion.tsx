@@ -6,14 +6,14 @@ type openElementFunction = (id: number) => void;
 
 const FaqAccordion = () => {
   const [currentOpenedElements, setCurrentOpenedElements] = useState<number[]>(
-    []
+    [],
   );
 
   const openElement: openElementFunction = (id) => {
     setCurrentOpenedElements((prevCurrentOppnedElements) => {
       if (prevCurrentOppnedElements.includes(id)) {
         return prevCurrentOppnedElements.filter(
-          (currentOppnedElement) => currentOppnedElement !== id
+          (currentOppnedElement) => currentOppnedElement !== id,
         );
       } else {
         return [...currentOpenedElements, id];

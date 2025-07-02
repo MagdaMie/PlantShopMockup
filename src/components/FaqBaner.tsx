@@ -1,14 +1,14 @@
 import PageTitle from "./PageTitle";
-import FAQbanerImg from "../assets/FAQbaner.png"
+import FAQbanerImg from "../assets/FAQbaner.png";
 
 const FaqBaner = () => {
   return (
     <div
-      className="h-[400px] bg-no-repeat bg-cover bg-center -z-10 "
+      className="-z-10 h-[400px] bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${FAQbanerImg})` }}
     >
-      <div className=" inset-0 bg-darkGray bg-opacity-30"></div>
-      <div className="h-[400px] flex justify-center items-center ">
+      <div className="inset-0 bg-darkGray bg-opacity-30"></div>
+      <div className="flex h-[400px] items-center justify-center">
         <PageTitle title={"Frequently Asked Questions"} />
       </div>
     </div>

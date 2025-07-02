@@ -16,29 +16,29 @@ const ShoppingCartElement = ({
 }: ShoppingCartElementProps) => {
   const showNotification = false;
   return (
-    <div className="flex flex-col items-center gap-3 md:gap-10 md:flex-row md:justify-start">
+    <div className="flex flex-col items-center gap-3 md:flex-row md:justify-start md:gap-10">
       {/* plant */}
-      <div className="flex justify-around items-center w-[300px]">
+      <div className="flex w-[300px] items-center justify-around">
         <img
           src={cartProduct.cartImg}
           alt="plant's picure"
-          className="h-[140px] w-[100px] mr-6"
+          className="mr-6 h-[140px] w-[100px]"
         />
         <p className="md:w-[130px]">{cartProduct.name}</p>
       </div>
-      <div className="flex justify-center gap-8 md:gap-12 w-[300px]">
+      <div className="flex w-[300px] justify-center gap-8 md:gap-12">
         {/* quantity +/- */}
-        <div className=" flex justify-center items-center rounded-xl w-[100px] h-[40px] bg-customGreen-dark bg-opacity-40">
+        <div className="flex h-[40px] w-[100px] items-center justify-center rounded-xl bg-customGreen-dark bg-opacity-40">
           <p
             onClick={() => decrementCounter(cartProduct)}
-            className="cursor-pointer px-3 "
+            className="cursor-pointer px-3"
           >
             -
           </p>
           <p>{cartProduct.counter}</p>
           <p
             onClick={() => addPlant(cartProduct, showNotification)}
-            className="cursor-pointer px-3 "
+            className="cursor-pointer px-3"
           >
             +
           </p>
@@ -48,10 +48,10 @@ const ShoppingCartElement = ({
           <p>${cartProduct.price * cartProduct.counter}</p>
         </div>
         {/* remove */}
-        <div className="flex justify-center items-center h-[40px] w-[40px] rounded-2xl  font-oxygen  bg-customGreen-dark bg-opacity-40">
+        <div className="flex h-[40px] w-[40px] items-center justify-center rounded-2xl bg-customGreen-dark bg-opacity-40 font-oxygen">
           <p
             onClick={() => removePlant(cartProduct)}
-            className="px-3 cursor-pointer font-thin "
+            className="cursor-pointer px-3 font-thin"
           >
             x
           </p>

@@ -18,7 +18,7 @@ const useCartStore = create<CartState>((set) => ({
       const { setNotification } = useNotificationStore.getState();
 
       const newCartProducts = prevState.cartProducts.some(
-        (plant) => plant.id === product.id
+        (plant) => plant.id === product.id,
       )
         ? prevState.cartProducts.map((cartProduct) => {
             if (cartProduct.id === product.id) {
@@ -39,7 +39,7 @@ const useCartStore = create<CartState>((set) => ({
     set((prevState) => {
       return {
         cartProducts: prevState.cartProducts.filter(
-          (cartProduct) => cartProduct.id !== product.id
+          (cartProduct) => cartProduct.id !== product.id,
         ),
       };
     }),

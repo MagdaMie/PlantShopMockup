@@ -1,10 +1,14 @@
 import NavLink from "./NavLink";
-import LogoImg from "../assets/Logo.png"
+import LogoImg from "../assets/Logo.png";
 
 const Logo = () => {
   return (
     <NavLink to={"/"}>
-      <img src={LogoImg} alt="logo" className="w-[50px] h-[50px] lg:h-[80px] lg:w-[80px]" />
+      <img
+        src={LogoImg}
+        alt="logo"
+        className="h-[50px] w-[50px] lg:h-[80px] lg:w-[80px]"
+      />
     </NavLink>
   );
 };

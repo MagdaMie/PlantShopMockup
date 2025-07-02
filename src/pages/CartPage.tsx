@@ -23,20 +23,20 @@ const CartPage = ({
   decrementCounter,
 }: CartPageProps) => {
   return (
-    <div className="w-5/6 mx-auto min-h-[60vh]">
+    <div className="mx-auto min-h-[60vh] w-5/6">
       <div>
         <PageTitle title="Your Cart" />
         {cartProducts.length === 0 && (
-          <div className="flex flex-col items-center m-6">
-            <p className="text-center text-lg mb-3">your cart is empty...</p>
+          <div className="m-6 flex flex-col items-center">
+            <p className="mb-3 text-center text-lg">your cart is empty...</p>
             <Link to={"/shop"}>
               <Button content={"Continue shopping"} />
             </Link>
           </div>
         )}
       </div>
-      <div className="flex flex-col justify-between items-center gap-20 md:justify-center  lg:flex-row lg:items-start">
-        <div className="flex w-[60%] flex-col items-center gap-14 md:gap-8 ">
+      <div className="flex flex-col items-center justify-between gap-20 md:justify-center lg:flex-row lg:items-start">
+        <div className="flex w-[60%] flex-col items-center gap-14 md:gap-8">
           {cartProducts.map((cartProduct) => {
             return (
               <ShoppingCartElement

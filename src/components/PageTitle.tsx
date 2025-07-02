@@ -4,13 +4,12 @@ type PageTitleProps = {
 };
 
 const PageTitle = ({ title, paragraph }: PageTitleProps) => {
-  return(
-    <div className="flex-col items-center justify-center mb-14">
-          <h3 className=" text-center text-5xl ">{title}</h3>
-          <p className="text-center mt-6">{paragraph}</p>
+  return (
+    <div className="mb-14 flex-col items-center justify-center">
+      <h3 className="text-center text-5xl">{title}</h3>
+      <p className="mt-6 text-center">{paragraph}</p>
     </div>
-  
-  ) 
+  );
 };
 
 export default PageTitle;

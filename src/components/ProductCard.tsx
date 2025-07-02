@@ -13,7 +13,7 @@ const ProductCard = ({ product, addPlant }: ProductCardProps) => {
   return (
     <div className="m-5">
       <Link to={`/product/${product.id}`}>
-        <div className="w-[250px] h-[350px] relative">
+        <div className="relative h-[350px] w-[250px]">
           <img
             className="absolute bottom-[-10%] left-[-15%] transform hover:scale-110"
             src={product.img}
@@ -21,12 +21,12 @@ const ProductCard = ({ product, addPlant }: ProductCardProps) => {
           />
         </div>
       </Link>
-      <div className="border-solid border-2 border-customGreen-dark rounded-xl pt-12 pb-5 px-5">
-        <div className="flex flex-wrap justify-around items-center">
+      <div className="rounded-xl border-2 border-solid border-customGreen-dark px-5 pb-5 pt-12">
+        <div className="flex flex-wrap items-center justify-around">
           <p className="font-bold">{product.name}</p>
-          <p className="font-bold text-xl">${product.price}</p>
+          <p className="text-xl font-bold">${product.price}</p>
         </div>
-        <div className="my-5 mx-0">
+        <div className="mx-0 my-5">
           <Button content={buttonContent} onClick={() => addPlant(product)} />
         </div>
       </div>

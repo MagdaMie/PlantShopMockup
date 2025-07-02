@@ -2,15 +2,15 @@ import { create } from "zustand";
 
 type NotificationState = {
   notification: string | null;
-  id: number| null;
+  id: number | null;
   setNotification: (notification: string | null) => void;
   clearNotification: () => void;
 };
 
 const useNotificationStore = create<NotificationState>((set) => ({
   notification: null,
-  id:null,
-  
+  id: null,
+
   setNotification: (message) => {
     set({ notification: message, id: Date.now() });
 
@@ -20,8 +20,7 @@ const useNotificationStore = create<NotificationState>((set) => ({
     }, 2000);
   },
 
-  
-  clearNotification: () => set({notification:null, id:null})
+  clearNotification: () => set({ notification: null, id: null }),
 }));
 
-export default useNotificationStore
+export default useNotificationStore;

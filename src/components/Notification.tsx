@@ -40,20 +40,20 @@ const Notification = () => {
   return ReactDOM.createPortal(
     <div
       key={id}
-      className="fixed top-[85px] right-1/2 transform translate-x-1/2 w-[300px] max-h-[100px] rounded-lg bg-[#333] text-white z-50 opacity-90 md:right-[20px] md:transform-none"
+      className="fixed right-1/2 top-[85px] z-50 max-h-[100px] w-[300px] translate-x-1/2 transform rounded-lg bg-[#333] text-white opacity-90 md:right-[20px] md:transform-none"
     >
-      <div className="flex flex-col gap-3 m-3">
+      <div className="m-3 flex flex-col gap-3">
         <h3 className="text-xs">{notification}</h3>
 
-        <div className="w-full h-1.5 bg-[#333] ">
+        <div className="h-1.5 w-full bg-[#333]">
           <div
-            className="h-full bg-customGreen-default transition-all duration-[20ms] ease-linear rounded-md"
+            className="h-full rounded-md bg-customGreen-default transition-all duration-[20ms] ease-linear"
             style={{ width: `${timeLeft}%` }}
           />
         </div>
       </div>
     </div>,
-    portalTarget
+    portalTarget,
   );
 };
 

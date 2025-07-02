@@ -14,9 +14,9 @@ const AccordionElement = ({
   isOpen,
 }: AccordionElementProps) => {
   return (
-    <div className="my-4 mx-auto w-5/6 md:w-4/6 ">
+    <div className="mx-auto my-4 w-5/6 md:w-4/6">
       <div
-        className="p-3  flex flex-col  justify-between border border-white rounded-md md:flex-row md:p-6"
+        className="flex flex-col justify-between rounded-md border border-white p-3 md:flex-row md:p-6"
         onClick={onClick}
       >
         <p className="text-lg">{question}</p>
@@ -25,7 +25,7 @@ const AccordionElement = ({
         </button>
       </div>
       {isOpen && (
-        <div className="mt-3 p-6 bg-customGreen-light text-darkGray text-lg rounded-md">
+        <div className="mt-3 rounded-md bg-customGreen-light p-6 text-lg text-darkGray">
           <p>{anwser}</p>
         </div>
       )}

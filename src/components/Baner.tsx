@@ -1,12 +1,12 @@
 import Button from "./Button";
 import NavLink from "./NavLink";
 import PageTitle from "./PageTitle";
-import BanerImg from "../assets/Baner1.jpg"
+import BanerImg from "../assets/Baner1.jpg";
 
 const Baner = () => {
   return (
     <div
-      className="w-full h-[500px] bg-cover bg-center bg-no-repeat flex flex-col justify-center"
+      className="flex h-[500px] w-full flex-col justify-center bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${BanerImg})` }}
     >
       <PageTitle

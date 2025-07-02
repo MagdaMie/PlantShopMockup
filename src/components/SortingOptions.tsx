@@ -16,19 +16,19 @@ const SortingOptions = ({ sortMethod, setSortMethod }: SortingoptionsProps) => {
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const [id, order] = e.target.value.split("|") as [
       SortOption["id"],
-      SortOption["order"]
+      SortOption["order"],
     ];
     setSortMethod({ id, order });
   };
 
   return (
-    <div className="flex flex-col items-center gap-3 lg:flex-row lg:ml-28 lg:gap-6">
+    <div className="flex flex-col items-center gap-3 lg:ml-28 lg:flex-row lg:gap-6">
       <h3>Sort plants:</h3>
-      <div className="border-2 border-customGreen-dark rounded-md">
+      <div className="rounded-md border-2 border-customGreen-dark">
         <select
           value={`${sortMethod.id}|${sortMethod.order}`}
           onChange={handleChange}
-          className="p-1 rounded-md bg-darkGray"
+          className="rounded-md bg-darkGray p-1"
         >
           {options.map(({ id, order, label }) => (
             <option key={`${id}-${order}`} value={`${id}|${order}`}>

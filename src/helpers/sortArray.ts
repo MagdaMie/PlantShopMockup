@@ -1,12 +1,12 @@
 export type SortOption = {
-  id: "name" | "price" ;
+  id: "name" | "price";
   order: "asc" | "desc";
 };
 
 export function sortArray<T>(
   array: T[],
   key: keyof T,
-  order: "asc" | "desc" = "asc"
+  order: "asc" | "desc" = "asc",
 ): T[] {
   return [...array].sort((a, b) => {
     const aVal = a[key];

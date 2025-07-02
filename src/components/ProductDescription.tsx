@@ -9,8 +9,8 @@ type ProductDescriptionProps = {
 
 const ProductDescription = ({ product, addPlant }: ProductDescriptionProps) => {
   return (
-    <div className=" flex flex-col justify-center items-center lg:w-[80%]">
-      <div className="w-full px-6 pb-10 mx-auto z-10 text-center lg:text-start lg:w-4/6 lg:pb-0">
+    <div className="flex flex-col items-center justify-center lg:w-[80%]">
+      <div className="z-10 mx-auto w-full px-6 pb-10 text-center lg:w-4/6 lg:pb-0 lg:text-start">
         <div className="my-4">
           <h3 className="text-3xl">{product.name}</h3>
           <p className="text-xl font-bold">${product.price}</p>

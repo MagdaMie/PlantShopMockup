@@ -3,10 +3,10 @@ import HeroImageSection from "./HeroImageSection";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col-reverse lg:flex-row lg:my-16 mx-8 my-4">
+    <div className="mx-8 my-4 flex flex-col-reverse lg:my-16 lg:flex-row">
       <HeroImageSection />
 
-      <div className="lg:w-1/2 lg:flex lg:items-center">
+      <div className="lg:flex lg:w-1/2 lg:items-center">
         <TextContent
           title={"get to know us"}
           paragraph={

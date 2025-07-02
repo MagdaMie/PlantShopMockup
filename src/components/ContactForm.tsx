@@ -31,7 +31,7 @@ const ContactForm = () => {
   });
   const form = useRef<HTMLFormElement>(null);
   const setNotification = useNotificationStore(
-    (state) => state.setNotification
+    (state) => state.setNotification,
   );
 
   const onSubmit = async () => {
@@ -40,7 +40,7 @@ const ContactForm = () => {
         "service_lv0ohw8",
         "template_jkz0z7f",
         form.current!,
-        { publicKey: "9dbeY18gXU1U0ji_B" }
+        { publicKey: "9dbeY18gXU1U0ji_B" },
       );
 
       setNotification("Message send suesfully!");
@@ -55,7 +55,7 @@ const ContactForm = () => {
     <form
       ref={form}
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col justify-center items-center "
+      className="flex flex-col items-center justify-center"
     >
       <input
         type="text"
@@ -63,38 +63,30 @@ const ContactForm = () => {
         placeholder="name"
         className="input-field"
       />
-      {errors.name && (
-        <div className="error-text">
-          {errors.name.message}
-        </div>
-      )}
+      {errors.name && <div className="error-text">{errors.name.message}</div>}
       <input
         type="text"
         {...register("email")}
         placeholder="e-mail"
         className="input-field"
       />
-      {errors.email && (
-        <div className="error-text">
-          {errors.email.message}
-        </div>
-      )}
+      {errors.email && <div className="error-text">{errors.email.message}</div>}
       <textarea
         {...register("message")}
         placeholder="your message..."
         className="input-field h-[200px]"
       ></textarea>
       {errors.message && (
-        <div className="error-text">
-          {errors.message.message}
-        </div>
+        <div className="error-text">{errors.message.message}</div>
       )}
-      <div className="py-4">  <Button
-        type="submit"
-        content={isSubmitting ? "Submitting..." : "Submit"}
-        disable={isSubmitting}
-      ></Button></div>
-    
+      <div className="py-4">
+        {" "}
+        <Button
+          type="submit"
+          content={isSubmitting ? "Submitting..." : "Submit"}
+          disable={isSubmitting}
+        ></Button>
+      </div>
     </form>
   );
 };

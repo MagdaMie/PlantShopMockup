@@ -8,7 +8,7 @@ type ButtonProps = {
 const Button = ({ content, onClick, disable, type }: ButtonProps) => {
   return (
     <button
-      className="bg-customGreen-dark px-[18px] py-2 rounded-3xl hover:bg-customGreen-default text-center"
+      className="rounded-3xl bg-customGreen-dark px-[18px] py-2 text-center hover:bg-customGreen-default"
       onClick={onClick}
       disabled={disable}
       type={type}

@@ -8,7 +8,7 @@ const ScrollToTop = () => {
     window.scrollTo(0, 0);
   }, [location.pathname]); // Trigger on every route change
 
-  return null; 
+  return null;
 };
 
 export default ScrollToTop;

@@ -29,7 +29,7 @@ function App() {
         acc.totalPrice += plant.counter * plant.price;
         return acc;
       },
-      { numberOfCartProducts: 0, totalPrice: 0 }
+      { numberOfCartProducts: 0, totalPrice: 0 },
     );
   }, [cartProducts]);
 
@@ -42,7 +42,7 @@ function App() {
       : SHIPPING_COST_BASE * numberOfCartProducts;
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <ScrollToTop />
       <SuspenseWrapper>
         <Header numberOfCartProducts={numberOfCartProducts} />

@@ -4,7 +4,7 @@ type NavLinkProps = {
   children: React.ReactNode;
   to: string;
   className?: string;
-  onClick?: ()=> void
+  onClick?: () => void;
 };
 
 const NavLink = ({ children, to, className, onClick }: NavLinkProps) => {
