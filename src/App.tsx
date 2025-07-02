@@ -5,7 +5,7 @@ import products from "./data/products";
 import ScrollToTop from "./components/ScrollToTop";
 import { useMemo } from "react";
 import SuspenseWrapper from "./components/SuspenseWrapper";
-import { PATHS } from "./data/routes";
+import { PATHS } from "./data/navigation";
 
 const Header = lazy(() => import("./pages/Header"));
 const ProductPage = lazy(() => import("./pages/ProductPage"));
