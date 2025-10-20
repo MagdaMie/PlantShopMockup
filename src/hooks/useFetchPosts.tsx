@@ -1,6 +1,24 @@
 import useSWR from "swr";
 import { RawPost } from "../types/types";
 import { UseFetchPostsReturnType } from "../types/types";
+import author1 from "../assets/author1.jpg";
+import author2 from "../assets/author2.jpg";
+import author3 from "../assets/author3.jpg";
+import post1 from "../assets/post1.jpg";
+import post2 from "../assets/post2.jpg";
+import post3 from "../assets/post3.jpg";
+
+const authorImages: { [id: number]: string } = {
+  1: author1,
+  2: author2,
+  3: author3,
+};
+
+const postImages: { [id: number]: string } = {
+  1: post1,
+  2: post2,
+  3: post3,
+};
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -16,8 +34,8 @@ const useFetchPosts = (url: string): UseFetchPostsReturnType => {
     ...rawPost,
     author: "Mike",
     date: "24 May 2024",
-    authorImg: `/author${rawPost.id}.jpg`,
-    postImg: `/post${rawPost.id}.jpg`,
+    authorImg: authorImages[rawPost.id],
+    postImg: postImages[rawPost.id],
   }));
 
   return { posts, loading: false, error: null };
