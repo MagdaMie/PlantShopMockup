@@ -6,7 +6,6 @@ const products: Product[] = [
     name: "Monstera",
     price: 50,
     img: "/1.png",
-    cartImg: "/1cart.png",
     counter: 1,
   },
   {
@@ -14,7 +13,6 @@ const products: Product[] = [
     name: "Snake Plant",
     price: 35,
     img: "/2.png",
-    cartImg: "/2cart.png",
     counter: 1,
   },
   {
@@ -22,7 +20,6 @@ const products: Product[] = [
     name: "Fiddle Leaf Fig",
     price: 65,
     img: "/3.png",
-    cartImg: "/3cart.png",
     counter: 1,
   },
   {
@@ -30,7 +27,6 @@ const products: Product[] = [
     name: "Pothos",
     price: 40,
     img: "/4.png",
-    cartImg: "/4cart.png",
     counter: 1,
   },
   {
@@ -38,7 +34,6 @@ const products: Product[] = [
     name: "ZZ Plant",
     price: 60,
     img: "/5.png",
-    cartImg: "/5cart.png",
     counter: 1,
   },
   {
@@ -46,7 +41,6 @@ const products: Product[] = [
     name: "Spider Plant",
     price: 45,
     img: "/6.png",
-    cartImg: "/6cart.png",
     counter: 1,
   },
   {
@@ -54,7 +48,6 @@ const products: Product[] = [
     name: "Rubber Plant",
     price: 55,
     img: "/7.png",
-    cartImg: "/7cart.png",
     counter: 1,
   },
   {
@@ -62,7 +55,6 @@ const products: Product[] = [
     name: "Peace Lily",
     price: 50,
     img: "/8.png",
-    cartImg: "/8cart.png",
     counter: 1,
   },
   {
@@ -70,7 +62,6 @@ const products: Product[] = [
     name: "Philodendron",
     price: 65,
     img: "/9.png",
-    cartImg: "/9cart.png",
     counter: 1,
   },
   {
@@ -78,7 +69,6 @@ const products: Product[] = [
     name: "Succulent",
     price: 35,
     img: "/10.png",
-    cartImg: "/10cart.png",
     counter: 1,
   },
   {
@@ -86,7 +76,6 @@ const products: Product[] = [
     name: "Bamboo Palm",
     price: 60,
     img: "/11.png",
-    cartImg: "/11cart.png",
     counter: 1,
   },
   {
@@ -94,7 +83,6 @@ const products: Product[] = [
     name: "Aloe Vera",
     price: 40,
     img: "/12.png",
-    cartImg: "/12cart.png",
     counter: 1,
   },
 ];

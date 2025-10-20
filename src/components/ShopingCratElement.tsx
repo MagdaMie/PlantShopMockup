@@ -20,7 +20,7 @@ const ShoppingCartElement = ({
       {/* plant */}
       <div className="flex w-[300px] items-center justify-around">
         <img
-          src={cartProduct.cartImg}
+          src={cartProduct.img}
           alt="plant's picure"
           className="mr-6 h-[140px] w-[100px]"
         />

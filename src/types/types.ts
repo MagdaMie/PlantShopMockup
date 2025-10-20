@@ -5,7 +5,7 @@ export type Product = {
   name: string;
   price: number;
   img: string;
-  cartImg: string;
+
   counter: number;
 };
 
