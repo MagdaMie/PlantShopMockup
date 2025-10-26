@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import { Product } from "../types/types";
+import ResponsiveImg from "./ResponsiveImg";
 
 type ProductCardProps = {
   product: Product;
@@ -14,10 +15,13 @@ const ProductCard = ({ product, addPlant }: ProductCardProps) => {
     <div className="m-5">
       <Link to={`/product/${product.id}`}>
         <div className="relative h-[350px] w-[250px]">
-          <img
-            className="absolute bottom-[-10%] left-[-15%] transform hover:scale-110"
+          <ResponsiveImg
             src={product.img}
-            alt="plant's photo"
+            key={product.img}
+            alt={"product picure"}
+            sizes={[375, 350]}
+            formats={["webp", "jpg"]}
+            className="absolute bottom-[-10%] left-[-15%] transform hover:scale-110"
           />
         </div>
       </Link>

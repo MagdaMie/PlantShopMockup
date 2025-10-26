@@ -1,5 +1,5 @@
 import ContactForm from "../components/ContactForm";
-import ContactBaner from "./ContactBaner";
+import ContactBaner from "../components/ContactBaner";
 import Notification from "../components/Notification";
 
 const ContactPage = () => {

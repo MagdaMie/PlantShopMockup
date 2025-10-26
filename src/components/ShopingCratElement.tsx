@@ -1,4 +1,5 @@
 import { Product } from "../types/types";
+import ResponsiveImg from "./ResponsiveImg";
 
 type ShoppingCartElementProps = {
   cartProduct: Product;
@@ -19,9 +20,11 @@ const ShoppingCartElement = ({
     <div className="flex flex-col items-center gap-3 md:flex-row md:justify-start md:gap-10">
       {/* plant */}
       <div className="flex w-[300px] items-center justify-around">
-        <img
+        <ResponsiveImg
           src={cartProduct.img}
-          alt="plant's picure"
+          alt="plant's picture"
+          sizes={[100]}
+          formats={["webp", "jpg"]}
           className="mr-6 h-[140px] w-[100px]"
         />
         <p className="md:w-[130px]">{cartProduct.name}</p>

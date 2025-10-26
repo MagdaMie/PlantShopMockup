@@ -1,4 +1,5 @@
 import { Post } from "../types/types";
+import ResponsiveImg from "./ResponsiveImg";
 
 const BlogCard = ({
   title,
@@ -12,7 +13,13 @@ const BlogCard = ({
     <div className="mx-4 rounded-lg bg-customGreen-dark">
       <div className="m-6 flex h-full flex-col lg:m-1">
         <div className="mt-6 lg:mt-0">
-          <img className="w-[400px] rounded-lg" src={postImg} alt="" />
+          <ResponsiveImg
+            src={postImg}
+            alt={title}
+            className="w-[400px] rounded-lg"
+            sizes={[350, 400]}
+            formats={["webp", "jpg"]}
+          />
         </div>
         <div className="mx-2 my-3">
           <h3 className="break-words pb-3 text-lg uppercase">{title}</h3>
