@@ -1,10 +1,11 @@
 import ResponsiveImg from "./ResponsiveImg";
+import contactBanerImg from "../assets/siteBaner.png"
 
 const ContactBaner = () => {
   return (
     <div className="relative flex h-[200px] min-h-[calc(100vh-200px)] flex-col items-center justify-center md:flex-1 md:flex-row">
       <ResponsiveImg
-        src="../assets/siteBaner.png"
+        src={contactBanerImg}
         alt="Contact Baner"
         sizes={[500, 400, 300]}
         formats={["webp", "jpg"]}
